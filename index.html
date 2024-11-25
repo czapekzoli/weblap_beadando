@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Receptek</title>
+  <link rel="icon" type="image/x-icon" href="favicon_io/android-chrome-512x512.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kalam">
+</head>
+
+<body>
+  <header class="container">
+    <h1>Főételek</h1>
+    <img src="logo.png" alt="logo" id="logo" width="350px" height="auto">
+    <h1>Desszertek</h1>
+  </header>
+  <div class="container">
+    <!--NAVIGÁCIÓ-->
+    <nav>
+      <ul class="nav_container">
+        <li><a class="active" href="#">Ételek</a></li>
+        <li><a href="italok.html">Italok</a></li>
+        <li><a href="#">Űrlap</a></li>
+        <li><a href="#">Kép album</a></li>
+      </ul>
+    </nav>
+    <!--1. RECEPT-->
+    <article class="recept">
+      <!--<img src="proba_foto.jpeg" alt="alma" class="gyumolcskep" /> -->
+      <h2>CSIRKEPÖRKÖLT</h2>
+      <label for="recept1_adag">Adag (fő): <input type="number" value="4" id="recept1_adag" min="4"></label>
+      <h4>Alapanyagok:</h4>
+      <div class="ingredients">
+        <ul class="ingredients">
+          <li><input type="checkbox" class="rounded-checkbox">1 ek sertészsír</li>
+          <li><input type="checkbox" class="rounded-checkbox">2 fej vöröshagyma (150 g/fej)</li>
+          <li><input type="checkbox" class="rounded-checkbox">5 gerezd fokhagyma</li>
+          <li><input type="checkbox" class="rounded-checkbox">4 db babérlevél</li>
+          <li><input type="checkbox" class="rounded-checkbox">1 db tv-paprika (90 g/db)</li>
+          <li><input type="checkbox" class="rounded-checkbox">1 db paradicsom (100 g/db)</li>
+          <li><input type="checkbox" class="rounded-checkbox">1 db egész csirke (2 kg/db)</li>
+          <li><input type="checkbox" class="rounded-checkbox">2 ek fűszerpaprika</li>
+          <li><input type="checkbox" class="rounded-checkbox">1 tk őrölt bors</li>
+          <li><input type="checkbox" class="rounded-checkbox">1 tk őrölt kömény</li>
+          <li><input type="checkbox" class="rounded-checkbox">só</li>
+          <li><input type="checkbox" class="rounded-checkbox">50 g daráltpaprika-krém</li>
+          <li><input type="checkbox" class="rounded-checkbox">1 mk csípős pritaminpaprika-krém</li>
+          <li><input type="checkbox" class="rounded-checkbox">900 ml víz</li>
+        </ul>
+      </div>
+      <a href="#" onclick="felugrik('felugro_recept1')">Elkészítés...</a>
+    </article>
+    <!--2. RECEPT-->
+    <article class="recept">
+      <!-- <img src="proba_foto.jpeg" alt="alma" class="gyumolcskep" /> -->
+      <h2>ROZMARINGOS LIBACOMB</h2>
+      <label for="recept2_adag">Adag (fő): <input type="number" value="4" id="recept2_adag" min="4"></label>
+      <h4>Alapanyagok:</h4>
+      <div class="ingredients">
+        <ul class="ingredients">
+          <li><input type="checkbox" class="rounded-checkbox">4 db libacomb (300 g/db)</li>
+          <li><input type="checkbox" class="rounded-checkbox">só, bors</li>
+          <li><input type="checkbox" class="rounded-checkbox">8 gerezd fokhagyma</li>
+          <li><input type="checkbox" class="rounded-checkbox">2 fej vöröshagyma (170 g/fej)</li>
+          <li><input type="checkbox" class="rounded-checkbox">4 szál rozmaring</li>
+          <li><input type="checkbox" class="rounded-checkbox">400 ml víz</li>
+          <li><input type="checkbox" class="rounded-checkbox">4 ek libazsír</li>
+        </ul>
+      </div>
+      <a href="#" onclick="felugrik('felugro_recept2')">Elkészítés...</a>
+    </article>
+    <!--3. RECEPT-->
+    <article class="recept">
+      <!--<img src="proba_foto.jpeg" alt="alma" class="gyumolcskep" /> -->
+      <h2>VADÁSZPECSENYE</h2>
+      <label for="recept3_adag">Adag (fő): <input type="number" value="4" id="recept3_adag" min="4"></label>
+      <h4>Alapanyagok:</h4>
+      <div class="ingredients">
+        <ul class="ingredients">
+          <li><input type="checkbox" class="rounded-checkbox">150 g kenyérszalonna</li>
+          <li><input type="checkbox" class="rounded-checkbox">4 szelet sertéskaraj (200 g/szelet)</li>
+          <li><input type="checkbox" class="rounded-checkbox">só, bors</li>
+          <li><input type="checkbox" class="rounded-checkbox">1 fej vöröshagyma (120 g/fej)</li>
+          <li><input type="checkbox" class="rounded-checkbox">2 gerezd fokhagyma</li>
+          <li><input type="checkbox" class="rounded-checkbox">250 g csiperkegomba</li>
+          <li><input type="checkbox" class="rounded-checkbox">1 szál sárgarépa (160 g/szál)</li>
+          <li><input type="checkbox" class="rounded-checkbox">½ citrom leve</li>
+          <li><input type="checkbox" class="rounded-checkbox">30 g vaj</li>
+        </ul>
+      </div>
+      <a href="#" onclick="felugrik('felugro_recept3')">Elkészítés...</a>
+    </article>
+    <!--4. RECEPT-->
+    <article class="recept">
+      <!--<img src="proba_foto.jpeg" alt="alma" class="gyumolcskep" /> -->
+      <h2>GOMBÁS RIZOTTÓ</h2>
+      <label for="recept4_adag">Adag (fő): <input type="number" value="4" id="recept4_adag" min="4"></label>
+      <h4>Alapanyagok:</h4>
+      <div class="ingredients">
+        <ul class="ingredients">
+          <li><input type="checkbox" class="rounded-checkbox">250 g csiperkegomba</li>
+          <li><input type="checkbox" class="rounded-checkbox">250 g shiitake gomba</li>
+          <li><input type="checkbox" class="rounded-checkbox">4 ek olívaolaj</li>
+          <li><input type="checkbox" class="rounded-checkbox">1 fej vöröshagyma (120 g/fej)</li>
+          <li><input type="checkbox" class="rounded-checkbox">2 gerezd fokhagyma</li>
+          <li><input type="checkbox" class="rounded-checkbox">2 ág kakukkfű</li>
+          <li><input type="checkbox" class="rounded-checkbox">300 g rizottórizs</li>
+          <li><input type="checkbox" class="rounded-checkbox">150 ml száraz fehérbor</li>
+          <li><input type="checkbox" class="rounded-checkbox">só, bors</li>
+          <li><input type="checkbox" class="rounded-checkbox">1 l zöldségalaplé</li>
+          <li><input type="checkbox" class="rounded-checkbox">70 g parmezán</li>
+          <li><input type="checkbox" class="rounded-checkbox">1 csokor petrezselyem</li>
+        </ul>
+      </div>
+      <a href="#" onclick="felugrik('felugro_recept4')">Elkészítés...</a>
+    </article>
+    <!--5. RECEPT-->
+    <article class="recept">
+      <!--<img src="proba_foto.jpeg" alt="alma" class="gyumolcskep" /> -->
+      <h2>CSOKIS TIRAMISU</h2>
+      <label for="recept5_adag">Adag (18cm-es átmérő): <input type="number" value="1" id="recept5_adag" min="1"></label>
+
+      <h4>Alapanyagok:</h4>
+      <div class="ingredients">
+        <ul class="ingredients">
+          <li><input type="checkbox" class="rounded-checkbox">180 g főzőtejszín</li>
+          <li><input type="checkbox" class="rounded-checkbox">160 g étcsoki</li>
+          <li><input type="checkbox" class="rounded-checkbox">600 g hideg habtejszín</li>
+          <li><input type="checkbox" class="rounded-checkbox">120 g kristálycukor</li>
+          <li><input type="checkbox" class="rounded-checkbox">1 rúd vanília</li>
+          <li><input type="checkbox" class="rounded-checkbox">350 g mascarpone</li>
+        </ul>
+      </div>
+      <a href="#" onclick="felugrik('felugro_recept5')">Elkészítés...</a>
+    </article>
+    <!--6. RECEPT-->
+    <article class="recept">
+      <!--<img src="proba_foto.jpeg" alt="alma" class="gyumolcskep" /> -->
+      <h2>MÁLNATURMIX</h2>
+      <label for="recept6_adag">Adag (fő): <input type="number" value="4" id="recept6_adag" min="4"></label>
+      <h4>Alapanyagok:</h4>
+      <div class="ingredients">
+        <ul class="ingredients">
+          <li><input type="checkbox" class="rounded-checkbox">500 g málna</li>
+          <li><input type="checkbox" class="rounded-checkbox">700 ml tej</li>
+          <li><input type="checkbox" class="rounded-checkbox">4 ek méz</li>
+          <li><input type="checkbox" class="rounded-checkbox">2 csomag vaníliás cukor (8 g-os kiszerelés)</li>
+        </ul>
+      </div>
+      <a href="#" onclick="felugrik('felugro_recept6')">Elkészítés...</a>
+    </article>
+    <!--7. RECEPT-->
+    <article class="recept">
+      <!--<img src="proba_foto.jpeg" alt="alma" class="gyumolcskep" /> -->
+      <h2>MEGGYLEVES</h2>
+      <label for="recept7_adag">Adag (fő): <input type="number" value="4" id="recept7_adag" min="4"></label>
+
+      <h4>Alapanyagok:</h4>
+      <div class="ingredients">
+        <ul class="ingredients">
+          <li><input type="checkbox" class="rounded-checkbox">2 db alma (200 g/db)</li>
+          <li><input type="checkbox" class="rounded-checkbox">700 ml növényi tej</li>
+          <li><input type="checkbox" class="rounded-checkbox">3 ek méz</li>
+          <li><input type="checkbox" class="rounded-checkbox">800 g magozott meggy</li>
+          <li><input type="checkbox" class="rounded-checkbox">165 ml kókusztejszín</li>
+        </ul>
+      </div>
+      <a href="#" onclick="felugrik('felugro_recept7')">Elkészítés...</a>
+    </article>
+    <!--8. RECEPT-->
+    <article class="recept">
+      <!--<img src="proba_foto.jpeg" alt="alma" class="gyumolcskep" /> -->
+      <h2>LISZTMENTES CSOKITORTA</h2>
+      <label for="recept8_adag">Adag (22 cm-es tortaforma): <input type="number" value="1" id="recept8_adag"
+          min="1"></label>
+
+      <h4>Alapanyagok:</h4>
+      <div class="ingredients">
+        <ul class="ingredients">
+          <li><input type="checkbox" class="rounded-checkbox">340 g étcsoki</li>
+          <li><input type="checkbox" class="rounded-checkbox">150 g vaj</li>
+          <li><input type="checkbox" class="rounded-checkbox">130 g kristálycukor</li>
+          <li><input type="checkbox" class="rounded-checkbox">5 db tojás</li>
+          <li><input type="checkbox" class="rounded-checkbox">100 g mandulaliszt</li>
+          <li><input type="checkbox" class="rounded-checkbox">1 csipet só</li>
+          <li><input type="checkbox" class="rounded-checkbox">15 g holland kakaópor</li>
+          <li><input type="checkbox" class="rounded-checkbox">1 tk vaníliakivonat</li>
+        </ul>
+      </div>
+      <a href="#" onclick="felugrik('felugro_recept8')">Elkészítés...</a>
+    </article>
+  </div>
+  <!--1. RECEPT POP-UP-->
+  <div class="felugro" id="felugro_recept1">
+    <div class="fedes" onclick="felugrik('felugro_recept1')"></div>
+    <div class="elkeszites">
+      <div class="bezaras" onclick="felugrik('felugro_recept1')">&times;</div>
+      <div class="ingredients">
+        <h2 class="recept">CSIRKEPÖRKÖLT</h2>
+        <ol class="ingredients">
+          <li>Zsírt melegítünk egy szélesebb lábasban. Hozzáadjuk a finomra vágott vörös- és fokhagymát, a babérlevelet
+            és közepes hőfokon 7 percig dinszteljük.</li>
+          <li>Hozzáadjuk a finomra vágott tv-paprikát és paradicsomot, majd további 2 perc pirítás után az alkatrészekre
+            szedett csirkét: combok, szárnyak, nyak, fartő, 3 darabra vágott mellek, és ha szerencséd van, lábak és
+            belsőség is.</li>
+          <li>Erős hőfokon kb. 3 perc alatt lepirítjuk a húst, hozzáadjuk a fűszerpaprikát, a borsot, a köményt, sózzuk,
+            beletesszük a daráltpaprika-krémet, a pritaminpaprikát és felöntjük a vízzel.</li>
+          <li>Fedő alatt, alacsony hőfokon 40 percig főzzük, majd levesszük a fedőt és közepesen erős hőfokon további 20
+            perc alatt készre főzzük.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <!--2. RECEPT POP-UP-->
+  <div class="felugro" id="felugro_recept2">
+    <div class="fedes" onclick="felugrik('felugro_recept2')"></div>
+    <div class="elkeszites">
+      <div class="bezaras" onclick="felugrik('felugro_recept2')">&times;</div>
+      <div class="ingredients">
+        <h2 class="recept">ROZMARINGOS LIBACOMB</h2>
+        <ol class="ingredients">
+          <li>A combokat erősen sózzuk és borsozzuk, majd bőrrel felfelé egy sütőtálba tesszük.</li>
+          <li>Mellédobáljuk a fokhagymát, a cikkekre vágott vöröshagymát, a rozmaringot, aláöntjük a vizet, rákanalazzuk
+            a libazsírt, lefóliázzuk és betesszük a 160 fokra előmelegített sütőbe 2,5-3,5 órára.</li>
+          <li>Sajnos ezt az időt nem lehet pontosan belőni. 2,5 óra után ellenőrizzük a húst, ha már szinte omlik, akkor
+            jó. Levesszük róla a fóliát, felemeljük a hőfokot 200 fokra, a kifolyt szafttal meglocsoljuk a libacombokat
+            és visszatesszük további 20 percre, hogy szép aranybarnára tudjon sülni a bőre.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <!--3. RECEPT POP-UP-->
+  <div class="felugro" id="felugro_recept3">
+    <div class="fedes" onclick="felugrik('felugro_recept3')"></div>
+    <div class="elkeszites">
+      <div class="bezaras" onclick="felugrik('felugro_recept3')">&times;</div>
+      <div class="ingredients">
+        <h2 class="recept">VADÁSZPECSENYE</h2>
+        <ol class="ingredients">
+          <li>A szalonnát 0,5 cm-es kockákra vágjuk és egy lábasban, közepes hőfokon kb. 5 perc alatt kisütjük a
+            zsírját, aztán kivesszük. A húst enyhén kiklopfoljuk, sózzuk és borsozzuk. A visszamaradt zsírban (ha
+            esetleg túl sokat engedett a szalonna, öntsünk le róla, megdermedve kiváló lesz kenyérre kenve) közepesen
+            erős hőfokon, oldalanként 2 perc alatt elősütjük a húst, majd kivesszük egy tányérra. A visszamaradt
+            zsírban, közepes hőfokon kb. 7 perc alatt megdinszteljük a finomra vágott vörös- és fokhagymát. Hozzáadjuk a
+            cikkekre vágott gombát és a kb. 2 cm-es darabokra vágott répát. Közepesen erős hőfokon 2-3 percig pirítjuk a
+            zöldségeket, sózzuk, borsozzuk, majd visszatesszük a lábasba a húst, felöntjük annyi vízzel, ami kb. 0,5
+            cm-re ellepi a húst (ez nálam 300 ml volt) és fedő alatt, közepes hőfokon addig pároljuk, amíg a hús és a
+            répa megpuhul. Ez az idő kb. 20 perc. </li>
+          <li>A habaráshoz a tejfölben csomómentesre keverjük a lisztet, merünk hozzá 200-300 ml mennyiséget a forró
+            léből, elkeverjük, visszaöntjük az alapba, majd besűrítjük vele az ételt 2-3 percnyi forralással. A citrom
+            kifacsart levével beállítjuk a savasságot, hozzáadjuk a vajat, megvárjuk míg elolvad, majd főtt
+            szarvacskatésztával és frissen aprított petrezselyemmel, illetve a korábban lepirított szalonnával megszórva
+            tálaljuk.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <!--4. RECEPT POP-UP-->
+  <div class="felugro" id="felugro_recept4">
+    <div class="fedes" onclick="felugrik('felugro_recept4')"></div>
+    <div class="elkeszites">
+      <div class="bezaras" onclick="felugrik('felugro_recept4')">&times;</div>
+      <div class="ingredients">
+        <h2 class="recept">GOMBÁS RIZOTTÓ</h2>
+        <ol class="ingredients">
+          <li>A gombákat mérettől függően felezzük vagy negyedeljük – érdemes minden részét felhasználni. Magas lángon
+            felhevítünk egy serpenyőt és 2 evőkanál olajon elkezdjük lepirítani a gombát. Addig pirítjuk, míg szépen
+            megbarnul, majd egy tálba szedve félretesszük.</li>
+          <li>Ugyanebben a serpenyőben, a maradék olajon megpirítjuk a felaprított vöröshagymát, majd hozzáadjuk a
+            felszeletelt fokhagymát és a kakukkfűleveleket. Beleöntjük a rizst, átforrósítjuk, aztán felöntjük
+            fehérborral és sózzuk, borsozzuk. És itt jön a rizottókészítés kulcsa: miután magába szívta a bort a rizs,
+            jön kb. 1 merőkanálnyi a zöldségalapléből. Ha ezt is magába szívta, hozzáadunk egy újabb merőkanálnyit, és
+            így tovább. Közben folyamatosan kevergetjük a rizst, nehogy odaégjen az alja.</li>
+          <li>Amikor már az utolsó adag zöldségalaplé is benne van és a rizs megpuhult, belereszeljük a parmezán nagyobb
+            részét és hozzáadjuk a pirított gomba háromnegyedét. Elkeverjük, és ezzel el is készültünk. Tálalásnál a
+            tetejére halmozzuk a maradék pirított gombát és megszórjuk aprított petrezselyemmel, valamint reszelt
+            parmezánnal.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <!--5. RECEPT POP-UP-->
+  <div class="felugro" id="felugro_recept5">
+    <div class="fedes" onclick="felugrik('felugro_recept5')"></div>
+    <div class="elkeszites">
+      <div class="bezaras" onclick="felugrik('felugro_recept5')">&times;</div>
+      <div class="ingredients">
+        <h2 class="recept">CSOKIS TIRAMISU</h2>
+        <ol class="ingredients">
+          <li>A főzőtejszínt közepes hőmérsékleten felmelegítjük egy lábasban az étcsokival, és amikor teljesen
+            felolvadt a csoki, lehúzzuk a tűzről és hagyjuk szoba-hőmérsékletűre hűlni.</li>
+          <li>A habtejszínt egy tálba öntjük, hozzáadjuk a cukrot és a vaníliarúd kikapart magjait, majd robotgéppel
+            kihabosítjuk, amíg egy kemény tejszínhabot kapunk. Ebbe beleforgatjuk a mascarponét és a csokis tejszínt –
+            egy szép homogén krémet kell kapnunk.</li>
+          <li>A kávét egy tálban elkeverjük a kakaóporral, és jöhet az összeállítás. A tál aljába kenünk egy keveset a
+            csokis krémből, erre mehet egy sor kakaós kávéba mártott babapiskóta. Kenünk rá egy újabb adagot a csokis
+            krémből, megszórjuk kakaóporral, majd ismét jöhet a kávéba mártott babapiskóta, a csokis krém, a kakaópor,
+            és így tovább egészen addig, amíg elfogynak az alapanyagok. Arra ügyeljünk, hogy a tetejére krém kerüljön.
+          </li>
+          <li>Hűtőbe tesszük legalább 2 órára, de a legjobb, ha egy egész éjszakát tud állni. Tálalás előtt megszórjuk a
+            tetejét kakaóporral.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <!--6. RECEPT POP-UP-->
+  <div class="felugro" id="felugro_recept6">
+    <div class="fedes" onclick="felugrik('felugro_recept6')"></div>
+    <div class="elkeszites">
+      <div class="bezaras" onclick="felugrik('felugro_recept6')">&times;</div>
+      <div class="ingredients">
+        <h2 class="recept">MÁLNATURMIX</h2>
+        <ol class="ingredients">
+          <li>A málnákat megmossuk és egy nagy teljesítményű turmixgépbe tesszük.</li>
+          <li>Hozzáadjuk a tejet, a mézet és a vaníliás cukrot, és maximum teljesítményen az egészet leturmixoljuk.</li>
+          <li>Sűrű szövésű szűrőn átszűrjük, hogy ne legyenek benne magok.</li>
+          <li>Hidegen, pohárba töltve kínáljuk.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <!--7. RECEPT POP-UP-->
+  <div class="felugro" id="felugro_recept7">
+    <div class="fedes" onclick="felugrik('felugro_recept7')"></div>
+    <div class="elkeszites">
+      <div class="bezaras" onclick="felugrik('felugro_recept7')">&times;</div>
+      <div class="ingredients">
+        <h2 class="recept">MEGGYLEVES</h2>
+        <ol class="ingredients">
+          <li>Az almát megpucoljuk, kimagozzuk és felkockázzuk, majd egy lábasba dobjuk, felöntjük a növényi tejjel és
+            hozzáadjuk a mézet. Közepes lángon felforraljuk, 10 perc alatt puhára főzzük, aztán leturmixoljuk.
+            Hozzáadjuk a magozott meggyet, a kókusztejszínt, és 2-3 perc alatt összeforraljuk.</li>
+          <li>A kész levest hűtőbe rakjuk minimum 60 percre, míg lehűl, és tejszínhabbal díszítve tálaljuk.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <!--8. RECEPT POP-UP-->
+  <div class="felugro" id="felugro_recept8">
+    <div class="fedes" onclick="felugrik('felugro_recept8')"></div>
+    <div class="elkeszites">
+      <div class="bezaras" onclick="felugrik('felugro_recept8')">&times;</div>
+      <div class="ingredients">
+        <h2 class="recept">LISZTMENTES CSOKITORTA</h2>
+        <ol class="ingredients">
+          <li>Az étcsokit, a vajat és a cukrot vízgőz fölött összeolvasztjuk egy tálban. Amikor homogén és selymes,
+            félrerakjuk. A tojásokat habosra keverjük, majd az olvasztott vajas csokihoz keverjük. A mandulalisztet, a
+            sót és a kakaóport összekeverjük, majd a vaníliakivonattal együtt a tojásos masszához adjuk, és átkeverjük.
+          </li>
+          <li>A csokis masszát 22 cm átmérőjű, alulról sütőpapírral bélelt tortaformába simítjuk, majd 180 fokra
+            előmelegített sütőbe toljuk kb. 25 percre. Mikor kész, kivesszük a sütőből és hagyjuk kihűlni, mielőtt
+            szeletelnénk.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <footer class="container">
+    <div>©2024 Czapek Zoltán</div>
+    <div>Az oldal tanulmányi célú.</div>
+  </footer>
+  <script>
+    function felugrik(receptszam) {
+      document.getElementById(receptszam).classList.toggle("active");
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Receptek</title>
+    <link rel="icon" type="image/x-icon" href="favicon_io/android-chrome-512x512.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kalam">
+</head>
+
+<body>
+    <header class="container">
+        <h1>Alkoholos Italok</h1>
+        <img src="logo.png" alt="logo" id="logo" width="350px" height="auto">
+        <h1>Alkoholmentes Italok</h1>
+    </header>
+    <div class="container">
+        <!--NAVIGÁCIÓ-->
+        <nav>
+            <ul class="nav_container">
+                <li><a href="index.html">Ételek</a></li>
+                <li><a class="active" href="#">Italok</a></li>
+                <li><a href="#">Űrlap</a></li>
+                <li><a href="#">Kép album</a></li>
+            </ul>
+        </nav>
+        <!--1. ITAL-->
+        <article class="recept">
+            <!--<img src="proba_foto.jpeg" alt="alma" class="gyumolcskep" /> -->
+            <h2>EPRES FRÖCCS</h2>
+            <label for="recept1_adag">Adag (fő): <input type="number" value="2" id="recept1_adag" min="2"></label>
+            <h4>Alapanyagok:</h4>
+            <div class="ingredients">
+                <ul class="ingredients">
+                    <li><input type="checkbox" class="rounded-checkbox">6 szem friss eper</li>
+                    <li><input type="checkbox" class="rounded-checkbox">10 db jégkocka</li>
+                    <li><input type="checkbox" class="rounded-checkbox">40 ml eperszörp</li>
+                    <li><input type="checkbox" class="rounded-checkbox">400 ml rozé bor</li>
+                    <li><input type="checkbox" class="rounded-checkbox">200 ml szóda</li>
+                </ul>
+            </div>
+            <a href="#" onclick="felugrik('felugro_recept1')" class="elkeszites">Elkészítés...</a>
+            
+        </article>
+        <!--2. ITAL-->
+        <article class="recept">
+            <!-- <img src="proba_foto.jpeg" alt="alma" class="gyumolcskep" /> -->
+            <h2>BELLINI</h2>
+            <label for="recept2_adag">Adag (fő): <input type="number" value="1" id="recept2_adag" min="1"></label>
+            <h4>Alapanyagok:</h4>
+            <div class="ingredients">
+                <ul class="ingredients">
+                    <li><input type="checkbox" class="rounded-checkbox">1 egész fehérhusú őszibarack</li>
+                    <li><input type="checkbox" class="rounded-checkbox">1,5 dl prosecco</li>
+                    <li><input type="checkbox" class="rounded-checkbox">1 marék jég</li>
+                </ul>
+            </div>
+            <a href="#" onclick="felugrik('felugro_recept2')">Elkészítés...</a>
+        </article>
+        <!--3. ITAL-->
+        <article class="recept">
+            <!--<img src="proba_foto.jpeg" alt="alma" class="gyumolcskep" /> -->
+            <h2>VANÍLIÁS-FEHÉRCSOKIS JEGESKÁVÉ</h2>
+            <label for="recept3_adag">Adag (fő): <input type="number" value="2" id="recept3_adag" min="2"></label>
+            <h4>Alapanyagok:</h4>
+            <div class="ingredients">
+                <ul class="ingredients">
+                    <li><input type="checkbox" class="rounded-checkbox">50 ml tejszín</li>
+                    <li><input type="checkbox" class="rounded-checkbox">400 ml tej</li>
+                    <li><input type="checkbox" class="rounded-checkbox">2 tk vaníliaaroma</li>
+                    <li><input type="checkbox" class="rounded-checkbox">100 g fehér csoki</li>
+                    <li><input type="checkbox" class="rounded-checkbox">jég</li>
+                    <li><input type="checkbox" class="rounded-checkbox">2 adag presszókávé</li>
+                </ul>
+            </div>
+            <a href="#" onclick="felugrik('felugro_recept3')">Elkészítés...</a>
+        </article>
+        <!--4. ITAL-->
+        <article class="recept">
+            <!--<img src="proba_foto.jpeg" alt="alma" class="gyumolcskep" /> -->
+            <h2>MULTIVITAMINOS-ITAL GYEREKEKNEK</h2>
+            <label for="recept4_adag">Adag (liter): <input type="number" value="1" id="recept4_adag" min="1"></label>
+            <h4>Alapanyagok:</h4>
+            <div class="ingredients">
+                <ul class="ingredients">
+                    <li><input type="checkbox" class="rounded-checkbox">300 g sárgarépa (pucolt állapotban)</li>
+                    <li><input type="checkbox" class="rounded-checkbox">110 g banán (pucolt állapotban)</li>
+                    <li><input type="checkbox" class="rounded-checkbox">200 g alma (pucolt állapotban)</li>
+                    <li><input type="checkbox" class="rounded-checkbox">120 ml frissen facsart narancslé</li>
+                    <li><input type="checkbox" class="rounded-checkbox">1 ek méz</li>
+                </ul>
+            </div>
+            <a href="#" onclick="felugrik('felugro_recept4')">Elkészítés...</a>
+        </article>
+        <!--1. ITAL POP-UP-->
+        <div class="felugro" id="felugro_recept1">
+            <div class="fedes" onclick="felugrik('felugro_recept1')"></div>
+            <div class="elkeszites">
+                <div class="bezaras" onclick="felugrik('felugro_recept1')">&times;</div>
+                <div class="ingredients">
+                    <h2 class="recept">EPRES FRÖCCS</h2>
+                    <ol class="ingredients">
+                        <li>A borospohár aljára dobni a kb. 0,5 cm-es kockákra aprított epret, mehetnek bele közben a
+                            jégkockák, majd rácsorgatjuk a szörpöt.</li>
+                        <li>Hozzáadjuk a finomra vágott tv-paprikát és paradicsomot, majd további 2 perc pirítás után az
+                            alkatrészekre szedett csirkét: combok, szárnyak, nyak, fartő, 3 darabra vágott mellek, és ha
+                            szerencséd van, lábak és belsőség is.</li>
+                        <li>Ezután jöhet a bor, amit felhúzunk a szódával.</li>
+                        <li>Friss eperrel és mentával szervírozzuk.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <!--2. ITAL POP-UP-->
+        <div class="felugro" id="felugro_recept2">
+            <div class="fedes" onclick="felugrik('felugro_recept2')"></div>
+            <div class="elkeszites">
+                <div class="bezaras" onclick="felugrik('felugro_recept2')">&times;</div>
+                <div class="ingredients">
+                    <h2 class="recept">BELLINI</h2>
+                    <ol class="ingredients">
+                        <li>A barackot egy turmixgépbe dobjuk.</li>
+                        <li>Hozzáöntjük a jéghideg proseccot, vagy pezsgőt.</li>
+                        <li>Beledobjuk az összetört jeget.</li>
+                        <li>Egy pohárba öntjük, majd öntünk még rá egy keveset a proseccoból.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <!--3. ITAL POP-UP-->
+        <div class="felugro" id="felugro_recept3">
+            <div class="fedes" onclick="felugrik('felugro_recept3')"></div>
+            <div class="elkeszites">
+                <div class="bezaras" onclick="felugrik('felugro_recept3')">&times;</div>
+                <div class="ingredients">
+                    <h2 class="recept">VANÍLIÁS-FEHÉRCSOKIS JEGESKÁVÉ</h2>
+                    <ol class="ingredients">
+                        <li>A tejszínt, a tejet és a vaníliaaromát egy gyorsforralóba öntjük, beleszórjuk a fehér csokit
+                            és közepes lángon felolvasztjuk benne, miközben egy habverővel folyamatosan keverjük, hogy
+                            szép csomómentes állagot kapjunk.</li>
+                        <li>Egy shakerbe jeget pakolunk, erre ráöntjük a fehér csokis tejünket, rárakjuk a shaker
+                            tetejét és alaposan összerázzuk. Ha nincs otthon shaker, akkor a jeget egy tálba tesszük,
+                            erre öntjük rá a tejet és mehet be a hűtőbe kb. 10 percre, hogy lehűljön.</li>
+                        <li>Két 300 ml-es poharat telepakolunk jéggel, beleöntjük a fehér csokis tejet kb. a pohár
+                            háromnegyedéig, majd ráfőzzük a kávét.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <!--4. ITAL POP-UP-->
+        <div class="felugro" id="felugro_recept4">
+            <div class="fedes" onclick="felugrik('felugro_recept4')"></div>
+            <div class="elkeszites">
+                <div class="bezaras" onclick="felugrik('felugro_recept4')">&times;</div>
+                <div class="ingredients">
+                    <h2 class="recept">MULTIVITAMINOS-ITAL GYEREKEKNEK</h2>
+                    <ol class="ingredients">
+                        <li>A répát kb. 3 cm-es darabokra vágjuk és bő vízben feltesszük főzni. Amikor megpuhult,
+                            leszűrjük, de a főzővizet felfogjuk. Egy turmixgépbe tesszük a répát, a banánt, az almát, a
+                            narancs- és citromlevet, a mézet, majd felöntjük kb. 900 ml főzővízzel és az egészet
+                            leturmixoljuk. Ha hígabbra szeretnénk, a főzővízzel beállítjuk a sűrűséget. </li>
+                        <li>Egy kis lyukú szűrőn átszűrjük, majd kihűtve szervírozzuk. De ha szeretnénk, hagyhatjuk
+                            szűretlenül is, csak akkor számolni kell vele, hogy kicsit sűrűbb lesz a végeredmény,
+                            viszont rostosabb is.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="container">
+        <div>©2024 Czapek Zoltán</div>
+        <div>Az oldal tanulmányi célú.</div>
+    </footer>
+    <script>
+        function felugrik(receptszam) {
+            document.getElementById(receptszam).classList.toggle("active");
+        }
+    </script>
+</body>
+
+</html>
