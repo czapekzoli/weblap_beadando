@@ -2,18 +2,46 @@
 <html lang="hu">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
   <title>Receptek</title>
   <link rel="icon" type="image/x-icon" href="favicon_io/android-chrome-512x512.png">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kalam">
+  <script>
+    function pluszadagolas(receptid) {
+      let felsorolas = document.getElementById(receptid).getElementsByTagName("li")
+      console.log(felsorolas)
+      let hossza = felsorolas.length
+      for (i = 0; i < hossza; i++) {
+        szokoz_index = felsorolas[i].innerText.indexOf(" ")
+        mennyiseg = felsorolas[i].innerText.substring(0, szokoz_index)
+        console.log(felsorolas[i].textContent)
+        felsorolas[i].innerHTML = `<input type="checkbox" class="rounded-checkbox">${Number(mennyiseg) + Number(mennyiseg * (1 / Number((document.getElementById(`${receptid}_adag`).innerText))))} ${felsorolas[i].innerText.substring(szokoz_index)}`
+      }
+      document.getElementById(`${receptid}_adag`).innerText = Number(document.getElementById(`${receptid}_adag`).innerText) + 1
+    }
+    function minuszadagolas(receptid) {
+      if ((Number(document.getElementById(`${receptid}_adag`).innerText) - 1) >= 1) {
+        let felsorolas = document.getElementById(receptid).getElementsByTagName("li")
+        let hossza = felsorolas.length
+        for (i = 0; i < hossza; i++) {
+          szokoz_index = felsorolas[i].innerText.indexOf(" ")
+          mennyiseg = felsorolas[i].innerText.substring(0, szokoz_index)
+          console.log(felsorolas[i].textContent)
+          console.log(felsorolas[i].innerHTML)
+          felsorolas[i].innerHTML = `<input type="checkbox" class="rounded-checkbox">${Number(mennyiseg) - Number(mennyiseg * (1 / Number((document.getElementById(`${receptid}_adag`).innerText))))} ${felsorolas[i].innerText.substring(szokoz_index)}`
+        }
+        document.getElementById(`${receptid}_adag`).innerText = Number(document.getElementById(`${receptid}_adag`).innerText) - 1
+      }
+    }
+  </script>
 </head>
 
 <body>
   <header class="container">
     <h1>Főételek</h1>
-    <img src="logo.png" alt="logo" id="logo" width="350px" height="auto">
+    <!--<img src="logo.png" alt="logo" id="logo" width="350">-->
     <h1>Desszertek</h1>
   </header>
   <div class="container">
@@ -23,17 +51,20 @@
         <li><a class="active" href="#">Ételek</a></li>
         <li><a href="italok.html">Italok</a></li>
         <li><a href="#">Űrlap</a></li>
-        <li><a href="#">Kép album</a></li>
+        <li><a href="gallery.html">Kép album</a></li>
       </ul>
     </nav>
     <!--1. RECEPT-->
     <article class="recept">
-      <!--<img src="proba_foto.jpeg" alt="alma" class="gyumolcskep" /> -->
-      <h2>CSIRKEPÖRKÖLT</h2>
-      <label for="recept1_adag">Adag (fő): <input type="number" value="4" id="recept1_adag" min="4"></label>
+      <div class="etelek">
+        <h2 class="kep_mogotte">PÖRKÖLT</h2>
+        <p class="kep_mogott">Adag (fő): <span class="adag" id="osszetevok_1_adag">4</span> <button class="pluszbutton"
+            onclick="pluszadagolas(`osszetevok_1`)">+</button> <button class="minuszbutton"
+            onclick="minuszadagolas(`osszetevok_1`)">-</button></p><img src="etel_foto/csirkeporkolt.png" alt="proba" class="szoveg_elotte">
+      </div>
       <h4>Alapanyagok:</h4>
       <div class="ingredients">
-        <ul class="ingredients">
+        <ul class="ingredients" id="osszetevok_1">
           <li><input type="checkbox" class="rounded-checkbox">1 ek sertészsír</li>
           <li><input type="checkbox" class="rounded-checkbox">2 fej vöröshagyma (150 g/fej)</li>
           <li><input type="checkbox" class="rounded-checkbox">5 gerezd fokhagyma</li>
@@ -44,7 +75,7 @@
           <li><input type="checkbox" class="rounded-checkbox">2 ek fűszerpaprika</li>
           <li><input type="checkbox" class="rounded-checkbox">1 tk őrölt bors</li>
           <li><input type="checkbox" class="rounded-checkbox">1 tk őrölt kömény</li>
-          <li><input type="checkbox" class="rounded-checkbox">só</li>
+          <li><input type="checkbox" class="rounded-checkbox">2 csipet só</li>
           <li><input type="checkbox" class="rounded-checkbox">50 g daráltpaprika-krém</li>
           <li><input type="checkbox" class="rounded-checkbox">1 mk csípős pritaminpaprika-krém</li>
           <li><input type="checkbox" class="rounded-checkbox">900 ml víz</li>
@@ -54,14 +85,18 @@
     </article>
     <!--2. RECEPT-->
     <article class="recept">
-      <!-- <img src="proba_foto.jpeg" alt="alma" class="gyumolcskep" /> -->
-      <h2>ROZMARINGOS LIBACOMB</h2>
-      <label for="recept2_adag">Adag (fő): <input type="number" value="4" id="recept2_adag" min="4"></label>
+      <div class="etelek">
+        <h2 class="kep_mogotte">LIBACOMB</h2>
+        <p class="kep_mogott">Adag (fő): <span class="adag" id="osszetevok_2_adag">4</span> <button class="pluszbutton"
+            onclick="pluszadagolas(`osszetevok_2`)">+</button> <button class="minuszbutton"
+            onclick="minuszadagolas(`osszetevok_2`)">-</button></p><img src="etel_foto/libacomb.png" alt="proba"
+          class="szoveg_elotte">
+      </div>
       <h4>Alapanyagok:</h4>
       <div class="ingredients">
-        <ul class="ingredients">
+        <ul class="ingredients" id="osszetevok_2">
           <li><input type="checkbox" class="rounded-checkbox">4 db libacomb (300 g/db)</li>
-          <li><input type="checkbox" class="rounded-checkbox">só, bors</li>
+          <li><input type="checkbox" class="rounded-checkbox">2 csipet só, bors</li>
           <li><input type="checkbox" class="rounded-checkbox">8 gerezd fokhagyma</li>
           <li><input type="checkbox" class="rounded-checkbox">2 fej vöröshagyma (170 g/fej)</li>
           <li><input type="checkbox" class="rounded-checkbox">4 szál rozmaring</li>
@@ -73,20 +108,24 @@
     </article>
     <!--3. RECEPT-->
     <article class="recept">
-      <!--<img src="proba_foto.jpeg" alt="alma" class="gyumolcskep" /> -->
-      <h2>VADÁSZPECSENYE</h2>
-      <label for="recept3_adag">Adag (fő): <input type="number" value="4" id="recept3_adag" min="4"></label>
+      <div class="etelek">
+        <h2 class="kep_mogotte">PECSENYE</h2>
+        <p class="kep_mogott">Adag (fő): <span class="adag" id="osszetevok_3_adag">4</span> <button class="pluszbutton"
+            onclick="pluszadagolas(`osszetevok_3`)">+</button> <button class="minuszbutton"
+            onclick="minuszadagolas(`osszetevok_3`)">-</button></p><img src="etel_foto/vadaszpecsenye.png" alt="proba"
+          class="szoveg_elotte">
+      </div>
       <h4>Alapanyagok:</h4>
       <div class="ingredients">
-        <ul class="ingredients">
+        <ul class="ingredients" id="osszetevok_3">
           <li><input type="checkbox" class="rounded-checkbox">150 g kenyérszalonna</li>
           <li><input type="checkbox" class="rounded-checkbox">4 szelet sertéskaraj (200 g/szelet)</li>
-          <li><input type="checkbox" class="rounded-checkbox">só, bors</li>
+          <li><input type="checkbox" class="rounded-checkbox">2 csipet só, bors</li>
           <li><input type="checkbox" class="rounded-checkbox">1 fej vöröshagyma (120 g/fej)</li>
           <li><input type="checkbox" class="rounded-checkbox">2 gerezd fokhagyma</li>
           <li><input type="checkbox" class="rounded-checkbox">250 g csiperkegomba</li>
           <li><input type="checkbox" class="rounded-checkbox">1 szál sárgarépa (160 g/szál)</li>
-          <li><input type="checkbox" class="rounded-checkbox">½ citrom leve</li>
+          <li><input type="checkbox" class="rounded-checkbox">0.5 citrom leve</li>
           <li><input type="checkbox" class="rounded-checkbox">30 g vaj</li>
         </ul>
       </div>
@@ -94,12 +133,16 @@
     </article>
     <!--4. RECEPT-->
     <article class="recept">
-      <!--<img src="proba_foto.jpeg" alt="alma" class="gyumolcskep" /> -->
-      <h2>GOMBÁS RIZOTTÓ</h2>
-      <label for="recept4_adag">Adag (fő): <input type="number" value="4" id="recept4_adag" min="4"></label>
+      <div class="etelek">
+        <h2 class="kep_mogotte">RIZOTTÓ</h2>
+        <p class="kep_mogott">Adag (fő): <span class="adag" id="osszetevok_4_adag">4</span> <button class="pluszbutton"
+            onclick="pluszadagolas(`osszetevok_4`)">+</button> <button class="minuszbutton"
+            onclick="minuszadagolas(`osszetevok_4`)">-</button></p><img src="etel_foto/gombas_rizotto.png" alt="proba"
+          class="szoveg_elotte">
+      </div>
       <h4>Alapanyagok:</h4>
       <div class="ingredients">
-        <ul class="ingredients">
+        <ul class="ingredients" id="osszetevok_4">
           <li><input type="checkbox" class="rounded-checkbox">250 g csiperkegomba</li>
           <li><input type="checkbox" class="rounded-checkbox">250 g shiitake gomba</li>
           <li><input type="checkbox" class="rounded-checkbox">4 ek olívaolaj</li>
@@ -108,7 +151,7 @@
           <li><input type="checkbox" class="rounded-checkbox">2 ág kakukkfű</li>
           <li><input type="checkbox" class="rounded-checkbox">300 g rizottórizs</li>
           <li><input type="checkbox" class="rounded-checkbox">150 ml száraz fehérbor</li>
-          <li><input type="checkbox" class="rounded-checkbox">só, bors</li>
+          <li><input type="checkbox" class="rounded-checkbox">2 csipet só, bors</li>
           <li><input type="checkbox" class="rounded-checkbox">1 l zöldségalaplé</li>
           <li><input type="checkbox" class="rounded-checkbox">70 g parmezán</li>
           <li><input type="checkbox" class="rounded-checkbox">1 csokor petrezselyem</li>
@@ -118,13 +161,16 @@
     </article>
     <!--5. RECEPT-->
     <article class="recept">
-      <!--<img src="proba_foto.jpeg" alt="alma" class="gyumolcskep" /> -->
-      <h2>CSOKIS TIRAMISU</h2>
-      <label for="recept5_adag">Adag (18cm-es átmérő): <input type="number" value="1" id="recept5_adag" min="1"></label>
-
+      <div class="etelek">
+        <h2 class="kep_mogotte">TIRAMISU</h2>
+        <p class="kep_mogott">Adag (fő): <span class="adag" id="osszetevok_5_adag">4</span> <button class="pluszbutton"
+            onclick="pluszadagolas(`osszetevok_5`)">+</button> <button class="minuszbutton"
+            onclick="minuszadagolas(`osszetevok_5`)">-</button></p><img src="desszert_foto/tiramisu.png" alt="proba"
+          class="szoveg_elotte">
+      </div>
       <h4>Alapanyagok:</h4>
       <div class="ingredients">
-        <ul class="ingredients">
+        <ul class="ingredients" id="osszetevok_5">
           <li><input type="checkbox" class="rounded-checkbox">180 g főzőtejszín</li>
           <li><input type="checkbox" class="rounded-checkbox">160 g étcsoki</li>
           <li><input type="checkbox" class="rounded-checkbox">600 g hideg habtejszín</li>
@@ -137,12 +183,17 @@
     </article>
     <!--6. RECEPT-->
     <article class="recept">
+      <div class="etelek">
+        <h2 class="kep_mogotte">MÁLNATURMIX</h2>
+        <p class="kep_mogott">Adag (fő): <span class="adag" id="osszetevok_6_adag">4</span> <button class="pluszbutton"
+            onclick="pluszadagolas(`osszetevok_6`)">+</button> <button class="minuszbutton"
+            onclick="minuszadagolas(`osszetevok_6`)">-</button></p><img src="desszert_foto/malna_turmix.png" alt="proba"
+          class="szoveg_elotte">
+      </div>
       <!--<img src="proba_foto.jpeg" alt="alma" class="gyumolcskep" /> -->
-      <h2>MÁLNATURMIX</h2>
-      <label for="recept6_adag">Adag (fő): <input type="number" value="4" id="recept6_adag" min="4"></label>
       <h4>Alapanyagok:</h4>
       <div class="ingredients">
-        <ul class="ingredients">
+        <ul class="ingredients" id="osszetevok_6">
           <li><input type="checkbox" class="rounded-checkbox">500 g málna</li>
           <li><input type="checkbox" class="rounded-checkbox">700 ml tej</li>
           <li><input type="checkbox" class="rounded-checkbox">4 ek méz</li>
@@ -153,13 +204,16 @@
     </article>
     <!--7. RECEPT-->
     <article class="recept">
-      <!--<img src="proba_foto.jpeg" alt="alma" class="gyumolcskep" /> -->
-      <h2>MEGGYLEVES</h2>
-      <label for="recept7_adag">Adag (fő): <input type="number" value="4" id="recept7_adag" min="4"></label>
-
+      <div class="etelek">
+        <h2 class="kep_mogotte">MEGGYLEVES</h2>
+        <p class="kep_mogott">Adag (fő): <span class="adag" id="osszetevok_7_adag">4</span> <button class="pluszbutton"
+            onclick="pluszadagolas(`osszetevok_7`)">+</button> <button class="minuszbutton"
+            onclick="minuszadagolas(`osszetevok_7`)">-</button></p><img src="desszert_foto/meggyleves.png" alt="proba"
+          class="szoveg_elotte">
+      </div>
       <h4>Alapanyagok:</h4>
       <div class="ingredients">
-        <ul class="ingredients">
+        <ul class="ingredients" id="osszetevok_7">
           <li><input type="checkbox" class="rounded-checkbox">2 db alma (200 g/db)</li>
           <li><input type="checkbox" class="rounded-checkbox">700 ml növényi tej</li>
           <li><input type="checkbox" class="rounded-checkbox">3 ek méz</li>
@@ -171,20 +225,23 @@
     </article>
     <!--8. RECEPT-->
     <article class="recept">
-      <!--<img src="proba_foto.jpeg" alt="alma" class="gyumolcskep" /> -->
-      <h2>LISZTMENTES CSOKITORTA</h2>
-      <label for="recept8_adag">Adag (22 cm-es tortaforma): <input type="number" value="1" id="recept8_adag"
-          min="1"></label>
+      <div class="etelek">
+        <h2 class="kep_mogotte">CSOKITORTA</h2>
+        <p class="kep_mogott">Adag (fő): <span class="adag" id="osszetevok_8_adag">4</span> <button class="pluszbutton"
+            onclick="pluszadagolas(`osszetevok_8`)">+</button> <button class="minuszbutton"
+            onclick="minuszadagolas(`osszetevok_8`)">-</button></p><img src="desszert_foto/csokitorta.png" alt="proba"
+          class="szoveg_elotte">
+      </div>
 
       <h4>Alapanyagok:</h4>
       <div class="ingredients">
-        <ul class="ingredients">
+        <ul class="ingredients" id="osszetevok_8">
           <li><input type="checkbox" class="rounded-checkbox">340 g étcsoki</li>
           <li><input type="checkbox" class="rounded-checkbox">150 g vaj</li>
           <li><input type="checkbox" class="rounded-checkbox">130 g kristálycukor</li>
           <li><input type="checkbox" class="rounded-checkbox">5 db tojás</li>
           <li><input type="checkbox" class="rounded-checkbox">100 g mandulaliszt</li>
-          <li><input type="checkbox" class="rounded-checkbox">1 csipet só</li>
+          <li><input type="checkbox" class="rounded-checkbox">2 csipet só</li>
           <li><input type="checkbox" class="rounded-checkbox">15 g holland kakaópor</li>
           <li><input type="checkbox" class="rounded-checkbox">1 tk vaníliakivonat</li>
         </ul>
@@ -237,15 +294,17 @@
     <div class="elkeszites">
       <div class="bezaras" onclick="felugrik('felugro_recept3')">&times;</div>
       <div class="ingredients">
-        <h2 class="recept">VADÁSZPECSENYE</h2>
+        <h2 class="recept">PECSENYE</h2>
         <ol class="ingredients">
           <li>A szalonnát 0,5 cm-es kockákra vágjuk és egy lábasban, közepes hőfokon kb. 5 perc alatt kisütjük a
-            zsírját, aztán kivesszük. A húst enyhén kiklopfoljuk, sózzuk és borsozzuk. A visszamaradt zsírban (ha
+            zsírját, aztán kivesszük. A húst enyhén kiklopfoljuk, sózzuk és borsozzuk. A visszamaradt zsírban
+            (ha
             esetleg túl sokat engedett a szalonna, öntsünk le róla, megdermedve kiváló lesz kenyérre kenve) közepesen
             erős hőfokon, oldalanként 2 perc alatt elősütjük a húst, majd kivesszük egy tányérra. A visszamaradt
             zsírban, közepes hőfokon kb. 7 perc alatt megdinszteljük a finomra vágott vörös- és fokhagymát. Hozzáadjuk a
             cikkekre vágott gombát és a kb. 2 cm-es darabokra vágott répát. Közepesen erős hőfokon 2-3 percig pirítjuk a
-            zöldségeket, sózzuk, borsozzuk, majd visszatesszük a lábasba a húst, felöntjük annyi vízzel, ami kb. 0,5
+            zöldségeket, sózzuk, borsozzuk, majd visszatesszük a lábasba a húst, felöntjük annyi vízzel, ami
+            kb. 0,5
             cm-re ellepi a húst (ez nálam 300 ml volt) és fedő alatt, közepes hőfokon addig pároljuk, amíg a hús és a
             répa megpuhul. Ez az idő kb. 20 perc. </li>
           <li>A habaráshoz a tejfölben csomómentesre keverjük a lisztet, merünk hozzá 200-300 ml mennyiséget a forró
@@ -270,10 +329,12 @@
             megbarnul, majd egy tálba szedve félretesszük.</li>
           <li>Ugyanebben a serpenyőben, a maradék olajon megpirítjuk a felaprított vöröshagymát, majd hozzáadjuk a
             felszeletelt fokhagymát és a kakukkfűleveleket. Beleöntjük a rizst, átforrósítjuk, aztán felöntjük
-            fehérborral és sózzuk, borsozzuk. És itt jön a rizottókészítés kulcsa: miután magába szívta a bort a rizs,
+            fehérborral és sózzuk, borsozzuk. És itt jön a rizottókészítés kulcsa: miután magába szívta a bort
+            a rizs,
             jön kb. 1 merőkanálnyi a zöldségalapléből. Ha ezt is magába szívta, hozzáadunk egy újabb merőkanálnyit, és
             így tovább. Közben folyamatosan kevergetjük a rizst, nehogy odaégjen az alja.</li>
-          <li>Amikor már az utolsó adag zöldségalaplé is benne van és a rizs megpuhult, belereszeljük a parmezán nagyobb
+          <li>Amikor már az utolsó adag zöldségalaplé is benne van és a rizs megpuhult, belereszeljük a
+            parmezán nagyobb
             részét és hozzáadjuk a pirított gomba háromnegyedét. Elkeverjük, és ezzel el is készültünk. Tálalásnál a
             tetejére halmozzuk a maradék pirított gombát és megszórjuk aprított petrezselyemmel, valamint reszelt
             parmezánnal.</li>
@@ -347,7 +408,8 @@
         <ol class="ingredients">
           <li>Az étcsokit, a vajat és a cukrot vízgőz fölött összeolvasztjuk egy tálban. Amikor homogén és selymes,
             félrerakjuk. A tojásokat habosra keverjük, majd az olvasztott vajas csokihoz keverjük. A mandulalisztet, a
-            sót és a kakaóport összekeverjük, majd a vaníliakivonattal együtt a tojásos masszához adjuk, és átkeverjük.
+            sót és a kakaóport összekeverjük, majd a vaníliakivonattal együtt a tojásos masszához adjuk, és
+            átkeverjük.
           </li>
           <li>A csokis masszát 22 cm átmérőjű, alulról sütőpapírral bélelt tortaformába simítjuk, majd 180 fokra
             előmelegített sütőbe toljuk kb. 25 percre. Mikor kész, kivesszük a sütőből és hagyjuk kihűlni, mielőtt

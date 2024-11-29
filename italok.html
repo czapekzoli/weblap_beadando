@@ -2,18 +2,43 @@
 <html lang="hu">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Receptek</title>
     <link rel="icon" type="image/x-icon" href="favicon_io/android-chrome-512x512.png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kalam">
+    <script>
+        function pluszadagolas(receptid) {
+            let felsorolas = document.getElementById(receptid).getElementsByTagName("li")
+            let hossza = felsorolas.length
+            for (i = 0; i < hossza; i++) {
+                szokoz_index = felsorolas[i].innerText.indexOf(" ")
+                mennyiseg = felsorolas[i].innerText.substring(0, szokoz_index)
+                felsorolas[i].textContent = `${Number(mennyiseg) + Number(mennyiseg * (1 / Number((document.getElementById(`${receptid}_adag`).innerText))))} ${felsorolas[i].innerText.substring(szokoz_index)}`
+            }
+            document.getElementById(`${receptid}_adag`).innerText = Number(document.getElementById(`${receptid}_adag`).innerText) + 1
+        }
+        function minuszadagolas(receptid) {
+            if ((Number(document.getElementById(`${receptid}_adag`).innerText) - 1) >= 1) {
+                let felsorolas = document.getElementById(receptid).getElementsByTagName("li")
+                let hossza = felsorolas.length
+                for (i = 0; i < hossza; i++) {
+                    szokoz_index = felsorolas[i].innerText.indexOf(" ")
+                    mennyiseg = felsorolas[i].innerText.substring(0, szokoz_index)
+                    console.log(felsorolas[i].textContent)
+                    felsorolas[i].textContent = `${Number(mennyiseg) - Number(mennyiseg * (1 / Number((document.getElementById(`${receptid}_adag`).innerText))))} ${felsorolas[i].innerText.substring(szokoz_index)}`
+                }
+                document.getElementById(`${receptid}_adag`).innerText = Number(document.getElementById(`${receptid}_adag`).innerText) - 1
+            }
+        }
+    </script>
 </head>
 
 <body>
     <header class="container">
         <h1>Alkoholos Italok</h1>
-        <img src="logo.png" alt="logo" id="logo" width="350px" height="auto">
+        <!--<img src="logo.png" alt="logo" id="logo" width="350">-->
         <h1>Alkoholmentes Italok</h1>
     </header>
     <div class="container">
@@ -23,17 +48,21 @@
                 <li><a href="index.html">Ételek</a></li>
                 <li><a class="active" href="#">Italok</a></li>
                 <li><a href="#">Űrlap</a></li>
-                <li><a href="#">Kép album</a></li>
+                <li><a href="gallery.html">Kép album</a></li>
             </ul>
         </nav>
         <!--1. ITAL-->
         <article class="recept">
-            <!--<img src="proba_foto.jpeg" alt="alma" class="gyumolcskep" /> -->
-            <h2>EPRES FRÖCCS</h2>
-            <label for="recept1_adag">Adag (fő): <input type="number" value="2" id="recept1_adag" min="2"></label>
+            <div class="etelek">
+                <h2 class="kep_mogotte">FRÖCCS</h2>
+                <p class="kep_mogott">Adag (fő): <span class="adag" id="recept_1_adag">2</span> <button
+                        class="pluszbutton" onclick="pluszadagolas(`recept_1`)">+</button> <button class="minuszbutton"
+                        onclick="minuszadagolas(`recept_1`)">-</button></p><img src="ital_foto/froccs.png" alt="proba"
+                    class="szoveg_elotte">
+            </div>
             <h4>Alapanyagok:</h4>
             <div class="ingredients">
-                <ul class="ingredients">
+                <ul class="ingredients" id="recept_1">
                     <li><input type="checkbox" class="rounded-checkbox">6 szem friss eper</li>
                     <li><input type="checkbox" class="rounded-checkbox">10 db jégkocka</li>
                     <li><input type="checkbox" class="rounded-checkbox">40 ml eperszörp</li>
@@ -42,18 +71,22 @@
                 </ul>
             </div>
             <a href="#" onclick="felugrik('felugro_recept1')" class="elkeszites">Elkészítés...</a>
-            
+
         </article>
         <!--2. ITAL-->
         <article class="recept">
-            <!-- <img src="proba_foto.jpeg" alt="alma" class="gyumolcskep" /> -->
-            <h2>BELLINI</h2>
-            <label for="recept2_adag">Adag (fő): <input type="number" value="1" id="recept2_adag" min="1"></label>
+            <div class="etelek">
+                <h2 class="kep_mogotte">BELLINI</h2>
+                <p class="kep_mogott">Adag (fő): <span class="adag" id="recept_2_adag">1</span> <button
+                        class="pluszbutton" onclick="pluszadagolas(`recept_2`)">+</button> <button class="minuszbutton"
+                        onclick="minuszadagolas(`recept_2`)">-</button></p><img src="ital_foto/bellini.png" alt="proba"
+                    class="szoveg_elotte">
+            </div>
             <h4>Alapanyagok:</h4>
             <div class="ingredients">
-                <ul class="ingredients">
+                <ul class="ingredients" id="recept_2">
                     <li><input type="checkbox" class="rounded-checkbox">1 egész fehérhusú őszibarack</li>
-                    <li><input type="checkbox" class="rounded-checkbox">1,5 dl prosecco</li>
+                    <li><input type="checkbox" class="rounded-checkbox">1.5 dl prosecco</li>
                     <li><input type="checkbox" class="rounded-checkbox">1 marék jég</li>
                 </ul>
             </div>
@@ -61,17 +94,21 @@
         </article>
         <!--3. ITAL-->
         <article class="recept">
-            <!--<img src="proba_foto.jpeg" alt="alma" class="gyumolcskep" /> -->
-            <h2>VANÍLIÁS-FEHÉRCSOKIS JEGESKÁVÉ</h2>
-            <label for="recept3_adag">Adag (fő): <input type="number" value="2" id="recept3_adag" min="2"></label>
+            <div class="etelek">
+                <h2 class="kep_mogotte">JEGESKÁVÉ</h2>
+                <p class="kep_mogott">Adag (fő): <span class="adag" id="recept_3_adag">2</span> <button
+                        class="pluszbutton" onclick="pluszadagolas(`recept_3`)">+</button> <button class="minuszbutton"
+                        onclick="minuszadagolas(`recept_3`)">-</button></p><img src="ital_foto/jegeskave.png"
+                    alt="proba" class="szoveg_elotte">
+            </div>
             <h4>Alapanyagok:</h4>
             <div class="ingredients">
-                <ul class="ingredients">
+                <ul class="ingredients" id="recept_3">
                     <li><input type="checkbox" class="rounded-checkbox">50 ml tejszín</li>
                     <li><input type="checkbox" class="rounded-checkbox">400 ml tej</li>
                     <li><input type="checkbox" class="rounded-checkbox">2 tk vaníliaaroma</li>
                     <li><input type="checkbox" class="rounded-checkbox">100 g fehér csoki</li>
-                    <li><input type="checkbox" class="rounded-checkbox">jég</li>
+                    <li><input type="checkbox" class="rounded-checkbox">1 marok jég</li>
                     <li><input type="checkbox" class="rounded-checkbox">2 adag presszókávé</li>
                 </ul>
             </div>
@@ -79,12 +116,16 @@
         </article>
         <!--4. ITAL-->
         <article class="recept">
-            <!--<img src="proba_foto.jpeg" alt="alma" class="gyumolcskep" /> -->
-            <h2>MULTIVITAMINOS-ITAL GYEREKEKNEK</h2>
-            <label for="recept4_adag">Adag (liter): <input type="number" value="1" id="recept4_adag" min="1"></label>
+            <div class="etelek">
+                <h2 class="kep_mogotte">VITAMINOS ITAL</h2>
+                <p class="kep_mogott">Adag (fő): <span class="adag" id="recept_4_adag">2</span> <button
+                        class="pluszbutton" onclick="pluszadagolas(`recept_4`)">+</button> <button class="minuszbutton"
+                        onclick="minuszadagolas(`recept_4`)">-</button></p><img src="ital_foto/vitamin_ital.png"
+                    alt="proba" class="szoveg_elotte">
+            </div>
             <h4>Alapanyagok:</h4>
             <div class="ingredients">
-                <ul class="ingredients">
+                <ul class="ingredients" id="recept_4">
                     <li><input type="checkbox" class="rounded-checkbox">300 g sárgarépa (pucolt állapotban)</li>
                     <li><input type="checkbox" class="rounded-checkbox">110 g banán (pucolt állapotban)</li>
                     <li><input type="checkbox" class="rounded-checkbox">200 g alma (pucolt állapotban)</li>

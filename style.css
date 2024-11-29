@@ -1,4 +1,4 @@
-/*====ALTALANOS====*/
+/******RESPONSIVE******/
 
 * {
   box-sizing: border-box;
@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  background-color: #FAF3DD;
+  background-color: #f5e6ca;
   padding: 0px;
   margin: 0px;
   font-family: "Kalam", sans-serif;
@@ -28,69 +28,40 @@ body {
   margin: 1%;
 }
 
-.elkeszites{
+.elkeszites {
   align-self: end;
 }
-/*====TAGEK====*/
 
-header.container {
-  padding: 2px;
-  margin: 0px;
-  background-color: rgb(235, 179, 110);
-  text-align: center;
-  font-size: 1.5em;
-  color: #000000;
-  justify-content: center;
+/******TAGEK******/
+
+h1 {
+  align-content: center;
 }
 
-.logo {
-  width: auto;
-  height: 10px;
-}
-
-article {
-  background-color: #8FC0A9;
-  padding: 0px 8px;
-  color: #000000;
-  text-align: justify;
-  border-radius: 15px;
-  flex: 1 1 100%;
-}
-
-article a {
-  float: right;
-  margin-bottom: 10px;
-}
-
-aside {
-  background-color: #b8b8ff;
-  padding: 15px;
-  color: #000000;
-  text-align: center;
-  font-size: 0.84em;
-  border-radius: 15px;
-  flex: 1 1 100%;
-}
-
-aside.tapertek {
-  font-size: 1.15em;
-  font-weight: bold;
-}
-
-footer {
-  background-color: #4A7C59;
-  color: #000000;
-  text-align: center;
-  font-size: 12px;
-  padding: 15px;
-}
-
-footer.container {
-  justify-content: space-between;
+h2 {
+  padding: 0 8px;
 }
 
 h4 {
   margin-bottom: 0px;
+}
+
+p {
+  padding: 0 8px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+
+article {
+  background-color: #e9c46a;
+  padding: 0px 0px;
+  color: #000000;
+  text-align: justify;
+  border-radius: 15px;
+  flex: 1 1 100%;
+  position: relative;
+  padding-bottom: 20px;
 }
 
 label {
@@ -104,8 +75,30 @@ input {
   margin: 0px 0px 0px 0px;
 }
 
+/******ELKÉSZÍTÉS GOMB******/
+article a {
+  float: right;
+  margin-bottom: 10px;
+  padding-right: 8px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
 
-/*====MENU====*/
+/******HEADER******/
+
+header.container {
+  padding: 2px;
+  margin: 0px;
+  background-color: #b28950;
+  text-align: center;
+  font-size: 1.5em;
+  color: #000000;
+  justify-content: center;
+}
+
+
+/******NAV******/
 
 nav {
   padding: 8px;
@@ -124,7 +117,7 @@ nav li a {
   padding: 8px;
   margin-bottom: 0px;
   color: #000000;
-  background-color: #68B0AB;
+  background-color: #a9a18e;
   /*border-radius: 15px;*/
   text-align: center;
   text-decoration: none;
@@ -147,9 +140,23 @@ nav li a:hover {
   transform: scale(1.2);
 }
 
+/*====FOOTER====*/
+
+footer {
+  background-color: #b28950;
+  color: white;
+  text-align: center;
+  font-size: 12px;
+  padding: 15px;
+}
+
+footer.container {
+  justify-content: space-between;
+}
+
 /*====OSZTALYOK====*/
 
-img.gyumolcskep {
+/*img.gyumolcskep {
   width: 10vw;
   height: auto;
   float: right;
@@ -157,24 +164,47 @@ img.gyumolcskep {
   margin-left: 5px;
   margin-bottom: 5px;
   display: block;
+}*/
+
+img.szoveg_elotte {
+  display: block;
+  width: auto;
+  height: 30vw;
+  margin: 2px 0 0 auto;
 }
 
-h1 {
-  align-content: center;
+.etelek {
+  position: relative;
+  display: inline-block;
+  width: 100%;
 }
 
 h2.recept {
   margin: 0px;
 }
 
+.kep_mogotte {
+  position: absolute;
+  color: white;
+  padding: 5px 10px;
+  font-size: 1.5em;
+}
+
+p.kep_mogott {
+  position: absolute;
+  padding-top: 15vw;
+}
+
 h4 {
   padding: 3px;
   text-indent: 1.1em;
+  margin-top: 0;
 }
 
 div.ingredients {
   text-align: center;
   margin: 0;
+  padding: 0 8px;
 }
 
 ul.ingredients {
@@ -188,6 +218,8 @@ ol.ingredients {
   display: inline-block;
   text-align: left;
 }
+
+/******CHECKBOX******/
 
 .rounded-checkbox {
   width: 15px;
@@ -265,9 +297,64 @@ ol.ingredients {
   transform: translate(-50%, -50%) scale(1);
 }
 
+/*====ADAGOLÁS====*/
+
+span.adag {
+  font-size: 30px;
+  color: red;
+  font-weight: bold;
+}
+
+button.pluszbutton {
+  flex-basis: 98%;
+}
+
+button.minuszbutton {
+  flex-basis: 98%;
+}
+
+/*====GALLERY====*/
+
+section {
+  margin-top: 0px;
+}
+
+.slider {
+  width: 80%;
+  min-width: 400px;
+  margin: 15px auto;
+}
+
+.slick-slide {
+  margin: 0px 5px;
+}
+
+.slick-slide img {
+  width: 100%;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: black;
+}
+
+.slick-slide {
+  transition: all ease-in-out .3s;
+  opacity: .2;
+}
+
+.slick-active {
+  opacity: .5;
+}
+
+.slick-current {
+  opacity: 1;
+}
+
+/******TABLET******/
+
 @media all and (min-width: 600px) {
 
-  /*tablet*/
   nav {
     flex-basis: 98%;
   }
@@ -277,11 +364,17 @@ ol.ingredients {
   aside {
     flex-basis: 48%;
   }
+
+  img.szoveg_elotte {
+    height: 20vw;
+  }
+
 }
+
+/******SZÁMÍTÓGÉP******/
 
 @media all and (min-width: 768px) {
 
-  /*számítógép*/
   .recept,
   article,
   aside {
@@ -292,5 +385,14 @@ ol.ingredients {
 
   nav {
     flex-basis: 98%;
+  }
+
+  img.szoveg_elotte {
+    height: 10vw;
+  }
+
+  p.kep_mogott {
+    position: absolute;
+    padding-top: 7vw;
   }
 }
