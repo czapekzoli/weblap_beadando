@@ -8,31 +8,6 @@
     <title>Receptek</title>
     <link rel="icon" type="image/x-icon" href="favicon_io/android-chrome-512x512.png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kalam">
-    <script>
-        function pluszadagolas(receptid) {
-            let felsorolas = document.getElementById(receptid).getElementsByTagName("li")
-            let hossza = felsorolas.length
-            for (i = 0; i < hossza; i++) {
-                szokoz_index = felsorolas[i].innerText.indexOf(" ")
-                mennyiseg = felsorolas[i].innerText.substring(0, szokoz_index)
-                felsorolas[i].textContent = `${Number(mennyiseg) + Number(mennyiseg * (1 / Number((document.getElementById(`${receptid}_adag`).innerText))))} ${felsorolas[i].innerText.substring(szokoz_index)}`
-            }
-            document.getElementById(`${receptid}_adag`).innerText = Number(document.getElementById(`${receptid}_adag`).innerText) + 1
-        }
-        function minuszadagolas(receptid) {
-            if ((Number(document.getElementById(`${receptid}_adag`).innerText) - 1) >= 1) {
-                let felsorolas = document.getElementById(receptid).getElementsByTagName("li")
-                let hossza = felsorolas.length
-                for (i = 0; i < hossza; i++) {
-                    szokoz_index = felsorolas[i].innerText.indexOf(" ")
-                    mennyiseg = felsorolas[i].innerText.substring(0, szokoz_index)
-                    console.log(felsorolas[i].textContent)
-                    felsorolas[i].textContent = `${Number(mennyiseg) - Number(mennyiseg * (1 / Number((document.getElementById(`${receptid}_adag`).innerText))))} ${felsorolas[i].innerText.substring(szokoz_index)}`
-                }
-                document.getElementById(`${receptid}_adag`).innerText = Number(document.getElementById(`${receptid}_adag`).innerText) - 1
-            }
-        }
-    </script>
 </head>
 
 <body>
@@ -51,13 +26,15 @@
                 <li><a href="gallery.html">Kép album</a></li>
             </ul>
         </nav>
+        <aside class="alkohol"><h1>ALKOHOLOS ITALOK</h1></aside>
+        <aside class="mentes"><h1>ALKOHOLMENTES ITALOK</h1></aside>
         <!--1. ITAL-->
         <article class="recept">
             <div class="etelek">
                 <h2 class="kep_mogotte">FRÖCCS</h2>
                 <p class="kep_mogott">Adag (fő): <span class="adag" id="recept_1_adag">2</span> <button
-                        class="pluszbutton" onclick="pluszadagolas(`recept_1`)">+</button> <button class="minuszbutton"
-                        onclick="minuszadagolas(`recept_1`)">-</button></p><img src="ital_foto/froccs.png" alt="proba"
+                        class="pluszbutton" id="recept_1_plusz">+</button> <button class="minuszbutton"
+                        id="recept_1_minusz">-</button></p><img src="ital_foto/froccs.png" alt="proba"
                     class="szoveg_elotte">
             </div>
             <h4>Alapanyagok:</h4>
@@ -78,8 +55,8 @@
             <div class="etelek">
                 <h2 class="kep_mogotte">BELLINI</h2>
                 <p class="kep_mogott">Adag (fő): <span class="adag" id="recept_2_adag">1</span> <button
-                        class="pluszbutton" onclick="pluszadagolas(`recept_2`)">+</button> <button class="minuszbutton"
-                        onclick="minuszadagolas(`recept_2`)">-</button></p><img src="ital_foto/bellini.png" alt="proba"
+                        class="pluszbutton" id="recept_2_plusz">+</button> <button class="minuszbutton"
+                        id="recept_2_minusz">-</button></p><img src="ital_foto/bellini.png" alt="proba"
                     class="szoveg_elotte">
             </div>
             <h4>Alapanyagok:</h4>
@@ -93,12 +70,12 @@
             <a href="#" onclick="felugrik('felugro_recept2')">Elkészítés...</a>
         </article>
         <!--3. ITAL-->
-        <article class="recept">
+        <article class="recept order_hatra">
             <div class="etelek">
                 <h2 class="kep_mogotte">JEGESKÁVÉ</h2>
                 <p class="kep_mogott">Adag (fő): <span class="adag" id="recept_3_adag">2</span> <button
-                        class="pluszbutton" onclick="pluszadagolas(`recept_3`)">+</button> <button class="minuszbutton"
-                        onclick="minuszadagolas(`recept_3`)">-</button></p><img src="ital_foto/jegeskave.png"
+                        class="pluszbutton"  id="recept_3_plusz">+</button> <button class="minuszbutton"
+                        id="recept_3_minusz">-</button></p><img src="ital_foto/jegeskave.png"
                     alt="proba" class="szoveg_elotte">
             </div>
             <h4>Alapanyagok:</h4>
@@ -115,12 +92,12 @@
             <a href="#" onclick="felugrik('felugro_recept3')">Elkészítés...</a>
         </article>
         <!--4. ITAL-->
-        <article class="recept">
+        <article class="recept order_hatra">
             <div class="etelek">
                 <h2 class="kep_mogotte">VITAMINOS ITAL</h2>
                 <p class="kep_mogott">Adag (fő): <span class="adag" id="recept_4_adag">2</span> <button
-                        class="pluszbutton" onclick="pluszadagolas(`recept_4`)">+</button> <button class="minuszbutton"
-                        onclick="minuszadagolas(`recept_4`)">-</button></p><img src="ital_foto/vitamin_ital.png"
+                        class="pluszbutton"  id="recept_4_plusz">+</button> <button class="minuszbutton"
+                        id="recept_4_minusz">-</button></p><img src="ital_foto/vitamin_ital.png"
                     alt="proba" class="szoveg_elotte">
             </div>
             <h4>Alapanyagok:</h4>
@@ -214,11 +191,7 @@
         <div>©2024 Czapek Zoltán</div>
         <div>Az oldal tanulmányi célú.</div>
     </footer>
-    <script>
-        function felugrik(receptszam) {
-            document.getElementById(receptszam).classList.toggle("active");
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>

@@ -8,34 +8,6 @@
   <title>Receptek</title>
   <link rel="icon" type="image/x-icon" href="favicon_io/android-chrome-512x512.png">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kalam">
-  <script>
-    function pluszadagolas(receptid) {
-      let felsorolas = document.getElementById(receptid).getElementsByTagName("li")
-      console.log(felsorolas)
-      let hossza = felsorolas.length
-      for (i = 0; i < hossza; i++) {
-        szokoz_index = felsorolas[i].innerText.indexOf(" ")
-        mennyiseg = felsorolas[i].innerText.substring(0, szokoz_index)
-        console.log(felsorolas[i].textContent)
-        felsorolas[i].innerHTML = `<input type="checkbox" class="rounded-checkbox">${Number(mennyiseg) + Number(mennyiseg * (1 / Number((document.getElementById(`${receptid}_adag`).innerText))))} ${felsorolas[i].innerText.substring(szokoz_index)}`
-      }
-      document.getElementById(`${receptid}_adag`).innerText = Number(document.getElementById(`${receptid}_adag`).innerText) + 1
-    }
-    function minuszadagolas(receptid) {
-      if ((Number(document.getElementById(`${receptid}_adag`).innerText) - 1) >= 1) {
-        let felsorolas = document.getElementById(receptid).getElementsByTagName("li")
-        let hossza = felsorolas.length
-        for (i = 0; i < hossza; i++) {
-          szokoz_index = felsorolas[i].innerText.indexOf(" ")
-          mennyiseg = felsorolas[i].innerText.substring(0, szokoz_index)
-          console.log(felsorolas[i].textContent)
-          console.log(felsorolas[i].innerHTML)
-          felsorolas[i].innerHTML = `<input type="checkbox" class="rounded-checkbox">${Number(mennyiseg) - Number(mennyiseg * (1 / Number((document.getElementById(`${receptid}_adag`).innerText))))} ${felsorolas[i].innerText.substring(szokoz_index)}`
-        }
-        document.getElementById(`${receptid}_adag`).innerText = Number(document.getElementById(`${receptid}_adag`).innerText) - 1
-      }
-    }
-  </script>
 </head>
 
 <body>
@@ -54,13 +26,14 @@
         <li><a href="gallery.html">Kép album</a></li>
       </ul>
     </nav>
+    <aside><h1>FŐÉTELEK</h1></aside>
     <!--1. RECEPT-->
     <article class="recept">
       <div class="etelek">
         <h2 class="kep_mogotte">PÖRKÖLT</h2>
         <p class="kep_mogott">Adag (fő): <span class="adag" id="osszetevok_1_adag">4</span> <button class="pluszbutton"
-            onclick="pluszadagolas(`osszetevok_1`)">+</button> <button class="minuszbutton"
-            onclick="minuszadagolas(`osszetevok_1`)">-</button></p><img src="etel_foto/csirkeporkolt.png" alt="proba" class="szoveg_elotte">
+            id="osszetevok_1_plusz">+</button> <button class="minuszbutton"
+            id="osszetevok_1_minusz">-</button></p><img src="etel_foto/csirkeporkolt.png" alt="proba" class="szoveg_elotte">
       </div>
       <h4>Alapanyagok:</h4>
       <div class="ingredients">
@@ -88,8 +61,8 @@
       <div class="etelek">
         <h2 class="kep_mogotte">LIBACOMB</h2>
         <p class="kep_mogott">Adag (fő): <span class="adag" id="osszetevok_2_adag">4</span> <button class="pluszbutton"
-            onclick="pluszadagolas(`osszetevok_2`)">+</button> <button class="minuszbutton"
-            onclick="minuszadagolas(`osszetevok_2`)">-</button></p><img src="etel_foto/libacomb.png" alt="proba"
+          id="osszetevok_2_plusz">+</button> <button class="minuszbutton"
+          id="osszetevok_2_minusz">-</button></p><img src="etel_foto/libacomb.png" alt="proba"
           class="szoveg_elotte">
       </div>
       <h4>Alapanyagok:</h4>
@@ -111,8 +84,8 @@
       <div class="etelek">
         <h2 class="kep_mogotte">PECSENYE</h2>
         <p class="kep_mogott">Adag (fő): <span class="adag" id="osszetevok_3_adag">4</span> <button class="pluszbutton"
-            onclick="pluszadagolas(`osszetevok_3`)">+</button> <button class="minuszbutton"
-            onclick="minuszadagolas(`osszetevok_3`)">-</button></p><img src="etel_foto/vadaszpecsenye.png" alt="proba"
+          id="osszetevok_3_plusz">+</button> <button class="minuszbutton"
+          id="osszetevok_3_minusz">-</button></p><img src="etel_foto/vadaszpecsenye.png" alt="proba"
           class="szoveg_elotte">
       </div>
       <h4>Alapanyagok:</h4>
@@ -136,8 +109,8 @@
       <div class="etelek">
         <h2 class="kep_mogotte">RIZOTTÓ</h2>
         <p class="kep_mogott">Adag (fő): <span class="adag" id="osszetevok_4_adag">4</span> <button class="pluszbutton"
-            onclick="pluszadagolas(`osszetevok_4`)">+</button> <button class="minuszbutton"
-            onclick="minuszadagolas(`osszetevok_4`)">-</button></p><img src="etel_foto/gombas_rizotto.png" alt="proba"
+          id="osszetevok_4_plusz">+</button> <button class="minuszbutton"
+          id="osszetevok_4_minusz">-</button></p><img src="etel_foto/gombas_rizotto.png" alt="proba"
           class="szoveg_elotte">
       </div>
       <h4>Alapanyagok:</h4>
@@ -159,13 +132,14 @@
       </div>
       <a href="#" onclick="felugrik('felugro_recept4')">Elkészítés...</a>
     </article>
+    <aside><h1>DESSZERTEK</h1></aside>
     <!--5. RECEPT-->
     <article class="recept">
       <div class="etelek">
         <h2 class="kep_mogotte">TIRAMISU</h2>
         <p class="kep_mogott">Adag (fő): <span class="adag" id="osszetevok_5_adag">4</span> <button class="pluszbutton"
-            onclick="pluszadagolas(`osszetevok_5`)">+</button> <button class="minuszbutton"
-            onclick="minuszadagolas(`osszetevok_5`)">-</button></p><img src="desszert_foto/tiramisu.png" alt="proba"
+          id="osszetevok_5_plusz">+</button> <button class="minuszbutton"
+          id="osszetevok_5_minusz">-</button></p><img src="desszert_foto/tiramisu.png" alt="proba"
           class="szoveg_elotte">
       </div>
       <h4>Alapanyagok:</h4>
@@ -186,8 +160,8 @@
       <div class="etelek">
         <h2 class="kep_mogotte">MÁLNATURMIX</h2>
         <p class="kep_mogott">Adag (fő): <span class="adag" id="osszetevok_6_adag">4</span> <button class="pluszbutton"
-            onclick="pluszadagolas(`osszetevok_6`)">+</button> <button class="minuszbutton"
-            onclick="minuszadagolas(`osszetevok_6`)">-</button></p><img src="desszert_foto/malna_turmix.png" alt="proba"
+          id="osszetevok_6_plusz">+</button> <button class="minuszbutton"
+          id="osszetevok_6_minusz">-</button></p><img src="desszert_foto/malna_turmix.png" alt="proba"
           class="szoveg_elotte">
       </div>
       <!--<img src="proba_foto.jpeg" alt="alma" class="gyumolcskep" /> -->
@@ -207,8 +181,8 @@
       <div class="etelek">
         <h2 class="kep_mogotte">MEGGYLEVES</h2>
         <p class="kep_mogott">Adag (fő): <span class="adag" id="osszetevok_7_adag">4</span> <button class="pluszbutton"
-            onclick="pluszadagolas(`osszetevok_7`)">+</button> <button class="minuszbutton"
-            onclick="minuszadagolas(`osszetevok_7`)">-</button></p><img src="desszert_foto/meggyleves.png" alt="proba"
+          id="osszetevok_7_plusz">+</button> <button class="minuszbutton"
+          id="osszetevok_7_minusz">-</button></p><img src="desszert_foto/meggyleves.png" alt="proba"
           class="szoveg_elotte">
       </div>
       <h4>Alapanyagok:</h4>
@@ -228,8 +202,8 @@
       <div class="etelek">
         <h2 class="kep_mogotte">CSOKITORTA</h2>
         <p class="kep_mogott">Adag (fő): <span class="adag" id="osszetevok_8_adag">4</span> <button class="pluszbutton"
-            onclick="pluszadagolas(`osszetevok_8`)">+</button> <button class="minuszbutton"
-            onclick="minuszadagolas(`osszetevok_8`)">-</button></p><img src="desszert_foto/csokitorta.png" alt="proba"
+          id="osszetevok_8_plusz">+</button> <button class="minuszbutton"
+          id="osszetevok_8_minusz">-</button></p><img src="desszert_foto/csokitorta.png" alt="proba"
           class="szoveg_elotte">
       </div>
 
@@ -424,9 +398,10 @@
   </footer>
   <script>
     function felugrik(receptszam) {
-      document.getElementById(receptszam).classList.toggle("active");
+        document.getElementById(receptszam).classList.toggle("active");
     }
-  </script>
+</script>
+<script src="script.js"></script>
 </body>
 
 </html>

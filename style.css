@@ -28,10 +28,24 @@ body {
   margin: 1%;
 }
 
-.elkeszites {
-  align-self: end;
+aside{
+  background-color: #e9c46a;
+  padding: 0px 0px;
+  color: #000000;
+  text-align: justify;
+  border-radius: 15px;
+  flex: 1 1 100%;
+  position: relative;
+  text-align: center;
+  font-size: 1.5em;
 }
-
+aside h1,h6 {
+  margin:0;
+  padding: 0;
+}
+br{
+  height: 0;
+}
 /******TAGEK******/
 
 h1 {
@@ -148,6 +162,10 @@ footer {
   text-align: center;
   font-size: 12px;
   padding: 15px;
+  position:relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
 
 footer.container {
@@ -177,6 +195,10 @@ img.szoveg_elotte {
   position: relative;
   display: inline-block;
   width: 100%;
+}
+
+.elkeszites {
+  align-self: end;
 }
 
 h2.recept {
@@ -217,6 +239,10 @@ ul.ingredients {
 ol.ingredients {
   display: inline-block;
   text-align: left;
+}
+
+aside.alkohol,.mentes{
+  flex-basis: 98%;
 }
 
 /******CHECKBOX******/
@@ -323,6 +349,7 @@ section {
   width: 80%;
   min-width: 400px;
   margin: 15px auto;
+  cursor: pointer;
 }
 
 .slick-slide {
@@ -350,18 +377,33 @@ section {
 .slick-current {
   opacity: 1;
 }
-
+.order_hatra{
+  order:100
+}
+.mentes{
+  order:99
+}
 /******TABLET******/
 
 @media all and (min-width: 600px) {
-
-  nav {
+  aside{
     flex-basis: 98%;
   }
 
-  .recept,
-  article,
-  aside {
+  aside.alkohol,.mentes{
+    flex-basis: 98%;
+  }
+  nav {
+    flex-basis: 98%;
+  }
+  .order_hatra{
+    order:100
+  }
+  .mentes{
+    order:99
+  }
+  
+  .recept, article {
     flex-basis: 48%;
   }
 
@@ -374,14 +416,23 @@ section {
 /******SZÁMÍTÓGÉP******/
 
 @media all and (min-width: 768px) {
+  aside{
+    flex-basis: 98%;
+  }
+  aside.alkohol,.mentes{
+    flex-basis: 48%;
+  }
+  .order_hatra{
+    order:0
+  }
+  .mentes{
+    order:0
+  }
 
-  .recept,
-  article,
-  aside {
+  .recept,article {
     flex-basis: 23%;
 
   }
-
 
   nav {
     flex-basis: 98%;
