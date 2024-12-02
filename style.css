@@ -15,6 +15,9 @@ body {
   padding: 0px;
   margin: 0px;
   font-family: "Kalam", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .container {
@@ -29,7 +32,7 @@ body {
 }
 
 aside{
-  background-color: #e9c46a;
+  background-color: #b2895074;
   padding: 0px 0px;
   color: #000000;
   text-align: justify;
@@ -54,6 +57,7 @@ h1 {
 
 h2 {
   padding: 0 8px;
+  text-shadow: black 1px 0 10px;
 }
 
 h4 {
@@ -162,15 +166,14 @@ footer {
   text-align: center;
   font-size: 12px;
   padding: 15px;
-  position:relative;
-  left: 0;
-  bottom: 0;
   width: 100%;
+  margin-top: auto;
 }
 
 footer.container {
   justify-content: space-between;
 }
+
 
 /*====OSZTALYOK====*/
 
@@ -267,7 +270,7 @@ aside.alkohol,.mentes{
   clip-path: circle(50% at 50% 50%);
 }
 
-/*====FELUGRO-ABLAK====*/
+/*====FELUGRÓ-ABLAK====*/
 .felugro .fedes {
   position: fixed;
   top: 0px;
@@ -285,7 +288,7 @@ aside.alkohol,.mentes{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0);
-  background: #fff;
+  background: #efd696;
   width: 80%;
   max-width: 700px;
   height: auto;
@@ -296,6 +299,10 @@ aside.alkohol,.mentes{
   transition: transform 0.3s ease-in-out;
   overflow-y: auto;
   max-height: 80vh;
+}
+
+.felugro .elkeszites h2{
+  color: white;
 }
 
 .felugro .bezaras {
@@ -327,7 +334,7 @@ aside.alkohol,.mentes{
 
 span.adag {
   font-size: 30px;
-  color: red;
+  color: rgb(117, 0, 0);
   font-weight: bold;
 }
 
@@ -362,7 +369,7 @@ section {
 
 .slick-prev:before,
 .slick-next:before {
-  color: black;
+  color: #a9a18e;
 }
 
 .slick-slide {
@@ -371,17 +378,17 @@ section {
 }
 
 .slick-active {
-  opacity: .5;
+  opacity: .2;
 }
 
 .slick-current {
   opacity: 1;
 }
 .order_hatra{
-  order:100
+  order:100;
 }
 .mentes{
-  order:99
+  order:99;
 }
 /******TABLET******/
 
@@ -412,7 +419,6 @@ section {
   }
 
 }
-
 /******SZÁMÍTÓGÉP******/
 
 @media all and (min-width: 768px) {
