@@ -267,8 +267,8 @@ aside.alkohol,
 }
 
 .rounded-checkbox:checked {
-  width: 25px;
-  height: 25px;
+  width: 15px;
+  height: 15px;
   accent-color: black;
   appearance: auto;
   clip-path: circle(50% at 50% 50%);
@@ -344,7 +344,7 @@ span.adag {
 }
 
 button.pluszbutton, button.minuszbutton {
-  background-color: #e9c46a;
+  background-color: transparent;
   border:none;
   font-size:xx-large;
   display: inline-flex;
@@ -426,7 +426,7 @@ span#formazas_as_label {
   color: #333;
 }
 
-input, select {
+input.gallery {
   display: block;
   width: 100%;
   padding: 10px;
@@ -437,12 +437,23 @@ input, select {
   background-color: #fff;
 }
 
-input[type="checkbox"],
+select {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 0.9em;
+  background-color: #fff;
+}
+
+/*input[type="checkbox"],
 input[type="radio"] {
   display: inline-block;
   width: auto;
   margin-right: 10px;
-}
+}*/
 
 .radio_group {
   margin: 10px 0;
