@@ -4,6 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Czapek Zoltán">
+    <meta name="description" content="Ital receptek, alkoholosak és alkohol mentesek">
     <link rel="stylesheet" href="style.css">
     <title>Receptek</title>
     <link rel="icon" type="image/x-icon" href="favicon_io/android-chrome-512x512.png">
@@ -16,36 +18,51 @@
         <!--<img src="logo.png" alt="logo" id="logo" width="350">-->
         <h1>Alkoholmentes Italok</h1>
     </header>
-    
-        <div class="container">
+
+    <div class="container">
         <!--NAVIGÁCIÓ-->
         <nav>
             <ul class="nav_container">
                 <li><a href="index.html">Ételek</a></li>
                 <li><a class="active" href="#">Italok</a></li>
-                <li><a href="#">Űrlap</a></li>
+                <li><a href="form.html">Űrlap</a></li>
                 <li><a href="gallery.html">Kép album</a></li>
             </ul>
         </nav>
-        <aside class="alkohol"><h1>ALKOHOLOS ITALOK</h1></aside>
-        <aside class="mentes"><h1>ALKOHOLMENTES ITALOK</h1></aside>
+        <aside class="alkohol">
+            <h1>ALKOHOLOS ITALOK</h1>
+        </aside>
+        <aside class="mentes">
+            <h1>ALKOHOLMENTES ITALOK</h1>
+        </aside>
         <!--1. ITAL-->
         <article class="recept">
             <div class="etelek">
                 <h2 class="kep_mogotte">FRÖCCS</h2>
-                <p class="kep_mogott">Adag (fő): <span class="adag" id="recept_1_adag">2</span> <button
-                        class="pluszbutton" id="recept_1_plusz">+</button> <button class="minuszbutton"
-                        id="recept_1_minusz">-</button></p><img src="ital_foto/froccs.png" alt="proba"
-                    class="szoveg_elotte">
+                <p class="kep_mogott">Adag (fő): <label>
+                        <button class="minuszbutton" id="recept_1_minusz">-</button>
+                    </label> <span class="adag" id="recept_1_adag">2</span><label>
+                        <button class="pluszbutton" id="recept_1_plusz">+</button>
+                    </label></p><img src="ital_foto/froccs.png" alt="Egy pohár epres fröccs" class="szoveg_elotte">
             </div>
             <h4>Alapanyagok:</h4>
             <div class="ingredients">
                 <ul class="ingredients" id="recept_1">
-                    <label><li><input type="checkbox" class="rounded-checkbox">6 szem friss eper</li></label>
-                    <label><li><input type="checkbox" class="rounded-checkbox">10 db jégkocka</li></label>
-                    <label><li><input type="checkbox" class="rounded-checkbox">40 ml eperszörp</li></label>
-                    <label><li><input type="checkbox" class="rounded-checkbox">400 ml rozé bor</li></label>
-                    <label><li><input type="checkbox" class="rounded-checkbox">200 ml szóda</li></label>
+                    <label>
+                        <li><input type="checkbox" class="rounded-checkbox">6 szem friss eper</li>
+                    </label>
+                    <label>
+                        <li><input type="checkbox" class="rounded-checkbox">10 db jégkocka</li>
+                    </label>
+                    <label>
+                        <li><input type="checkbox" class="rounded-checkbox">40 ml eperszörp</li>
+                    </label>
+                    <label>
+                        <li><input type="checkbox" class="rounded-checkbox">400 ml rozé bor</li>
+                    </label>
+                    <label>
+                        <li><input type="checkbox" class="rounded-checkbox">200 ml szóda</li>
+                    </label>
                 </ul>
             </div>
             <a href="#" onclick="felugrik('felugro_recept1')" class="elkeszites">Elkészítés...</a>
@@ -55,17 +72,25 @@
         <article class="recept">
             <div class="etelek">
                 <h2 class="kep_mogotte">BELLINI</h2>
-                <p class="kep_mogott">Adag (fő): <span class="adag" id="recept_2_adag">1</span> <button
-                        class="pluszbutton" id="recept_2_plusz">+</button> <button class="minuszbutton"
-                        id="recept_2_minusz">-</button></p><img src="ital_foto/bellini.png" alt="proba"
-                    class="szoveg_elotte">
+                <p class="kep_mogott">Adag (fő): <label>
+                        <button class="minuszbutton" id="recept_2_minusz">-</button>
+                    </label> <span class="adag" id="recept_2_adag">1</span> <label>
+                        <button class="pluszbutton" id="recept_2_plusz">+</button>
+                    </label></p><img src="ital_foto/bellini.png"
+                    alt="Két pohár bellini, mellette kettő friss gerezd őszibarackkal" class="szoveg_elotte">
             </div>
             <h4>Alapanyagok:</h4>
             <div class="ingredients">
                 <ul class="ingredients" id="recept_2">
-                    <label><li><input type="checkbox" class="rounded-checkbox">1 egész fehérhusú őszibarack</li></label>
-                    <label><li><input type="checkbox" class="rounded-checkbox">1.5 dl prosecco</li></label>
-                    <label><li><input type="checkbox" class="rounded-checkbox">1 marék jég</li></label>
+                    <label>
+                        <li><input type="checkbox" class="rounded-checkbox">1 egész fehérhusú őszibarack</li>
+                    </label>
+                    <label>
+                        <li><input type="checkbox" class="rounded-checkbox">1.5 dl prosecco</li>
+                    </label>
+                    <label>
+                        <li><input type="checkbox" class="rounded-checkbox">1 marék jég</li>
+                    </label>
                 </ul>
             </div>
             <a href="#" onclick="felugrik('felugro_recept2')">Elkészítés...</a>
@@ -74,20 +99,34 @@
         <article class="recept order_hatra">
             <div class="etelek">
                 <h2 class="kep_mogotte">JEGESKÁVÉ</h2>
-                <p class="kep_mogott">Adag (fő): <span class="adag" id="recept_3_adag">2</span> <button
-                        class="pluszbutton"  id="recept_3_plusz">+</button> <button class="minuszbutton"
-                        id="recept_3_minusz">-</button></p><img src="ital_foto/jegeskave.png"
-                    alt="proba" class="szoveg_elotte">
+                <p class="kep_mogott">Adag (fő): <label>
+                        <button class="minuszbutton" id="recept_3_minusz">-</button>
+                    </label> <span class="adag" id="recept_3_adag">2</span> <label>
+                        <button class="pluszbutton" id="recept_3_plusz">+</button>
+                    </label></p><img src="ital_foto/jegeskave.png" alt="Egy pohár jegeskávé, több jégkockával"
+                    class="szoveg_elotte">
             </div>
             <h4>Alapanyagok:</h4>
             <div class="ingredients">
                 <ul class="ingredients" id="recept_3">
-                    <label><li><input type="checkbox" class="rounded-checkbox">50 ml tejszín</li></label>
-                    <label><li><input type="checkbox" class="rounded-checkbox">400 ml tej</li></label>
-                    <label><li><input type="checkbox" class="rounded-checkbox">2 tk vaníliaaroma</li></label>
-                    <label><li><input type="checkbox" class="rounded-checkbox">100 g fehér csoki</li></label>
-                    <label><li><input type="checkbox" class="rounded-checkbox">1 marok jég</li></label>
-                    <label><li><input type="checkbox" class="rounded-checkbox">2 adag presszókávé</li></label>
+                    <label>
+                        <li><input type="checkbox" class="rounded-checkbox">50 ml tejszín</li>
+                    </label>
+                    <label>
+                        <li><input type="checkbox" class="rounded-checkbox">400 ml tej</li>
+                    </label>
+                    <label>
+                        <li><input type="checkbox" class="rounded-checkbox">2 tk vaníliaaroma</li>
+                    </label>
+                    <label>
+                        <li><input type="checkbox" class="rounded-checkbox">100 g fehér csoki</li>
+                    </label>
+                    <label>
+                        <li><input type="checkbox" class="rounded-checkbox">1 marok jég</li>
+                    </label>
+                    <label>
+                        <li><input type="checkbox" class="rounded-checkbox">2 adag presszókávé</li>
+                    </label>
                 </ul>
             </div>
             <a href="#" onclick="felugrik('felugro_recept3')">Elkészítés...</a>
@@ -96,19 +135,32 @@
         <article class="recept order_hatra">
             <div class="etelek">
                 <h2 class="kep_mogotte">VITAMINOS</h2>
-                <p class="kep_mogott">Adag (fő): <span class="adag" id="recept_4_adag">2</span> <button
-                        class="pluszbutton"  id="recept_4_plusz">+</button> <button class="minuszbutton"
-                        id="recept_4_minusz">-</button></p><img src="ital_foto/vitamin_ital.png"
-                    alt="proba" class="szoveg_elotte">
+                <p class="kep_mogott">Adag (fő): <label>
+                        <button class="minuszbutton" id="recept_4_minusz">-</button>
+                    </label> <span class="adag" id="recept_4_adag">2</span> <label>
+                        <button class="pluszbutton" id="recept_4_plusz">+</button>
+                    </label></p><img src="ital_foto/vitamin_ital.png"
+                    alt="Két pohár vitaminos ital, egyik banánosabb, mint a másik, ami a színében is meglátszik"
+                    class="szoveg_elotte">
             </div>
             <h4>Alapanyagok:</h4>
             <div class="ingredients">
                 <ul class="ingredients" id="recept_4">
-                    <label><li><input type="checkbox" class="rounded-checkbox">300 g sárgarépa (pucolt állapotban)</li></label>
-                    <label><li><input type="checkbox" class="rounded-checkbox">110 g banán (pucolt állapotban)</li></label>
-                    <label><li><input type="checkbox" class="rounded-checkbox">200 g alma (pucolt állapotban)</li></label>
-                    <label><li><input type="checkbox" class="rounded-checkbox">120 ml frissen facsart narancslé</li></label>
-                    <label><li><input type="checkbox" class="rounded-checkbox">1 ek méz</li></label>
+                    <label>
+                        <li><input type="checkbox" class="rounded-checkbox">300 g sárgarépa (pucolt állapotban)</li>
+                    </label>
+                    <label>
+                        <li><input type="checkbox" class="rounded-checkbox">110 g banán (pucolt állapotban)</li>
+                    </label>
+                    <label>
+                        <li><input type="checkbox" class="rounded-checkbox">200 g alma (pucolt állapotban)</li>
+                    </label>
+                    <label>
+                        <li><input type="checkbox" class="rounded-checkbox">120 ml frissen facsart narancslé</li>
+                    </label>
+                    <label>
+                        <li><input type="checkbox" class="rounded-checkbox">1 ek méz</li>
+                    </label>
                 </ul>
             </div>
             <a href="#" onclick="felugrik('felugro_recept4')">Elkészítés...</a>

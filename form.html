@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Czapek Zoltán">
+    <meta name="description" content="Form, új receptek beküldéséhez űrlap">
+    <link rel="stylesheet" href="style.css">
+    <title>Receptek</title>
+    <link rel="icon" type="image/x-icon" href="favicon_io/android-chrome-512x512.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kalam">
+</head>
+
+<body>
+    <header class="container">
+        <h1>RECEPT BEKÜLDÉSE</h1>
+        <!--<img src="logo.png" alt="logo" id="logo" width="350">-->
+    </header>
+
+    <div class="container">
+        <!--NAVIGÁCIÓ-->
+        <nav>
+            <ul class="nav_container">
+                <li><a href="index.html">Ételek</a></li>
+                <li><a href="italok.html">Italok</a></li>
+                <li><a class="active" href="#">Űrlap</a></li>
+                <li><a href="gallery.html">Kép album</a></li>
+            </ul>
+        </nav>
+        <!--FORM-->
+        <form class="form_container" method="post" id="recept_form"
+            action="https://rf.uni-corvinus.hu/webfejlesztes/receive.php" novalidate>
+            <!--RECEPT NÉV-->
+            <label class="form_label">
+                Recept neve:
+                <input type="text" id="recept_nev" name="recept_nev">
+            </label><br>
+
+            <!--ADAG SZÁM (1-20)-->
+            <label class="form_label">
+                Adagok száma:
+                <input type="number" id="adag" name="adag" min="1" max="20">
+            </label><br>
+
+            <!--EMAIL CÍM-->
+            <label class="form_label">
+                Email címed:
+                <input type="email" id="email" name="email">
+            </label><br>
+
+            <!--KATEGÓRIA DROPDOWN-->
+            <label class="form_label">
+                Kategória:
+                <select id="kategoria" name="kategoria">
+                    <option value="leves">Leves</option>
+                    <option value="foetel">Főétel</option>
+                    <option value="desszert">Desszert</option>
+                </select>
+            </label><br>
+
+            <!--GLUTÉNMENTES-E CHECKBOX-->
+            <label class="form_label">
+                Gluténmentes:
+                <input type="checkbox" id="glutenmentes" name="glutenmentes">
+            </label><br>
+
+            <!--HÚSOS-E RADIO-->
+            <span id="formazas_as_label">Húsos étel?</span><br>
+            <div class="radio_group">
+                <label class="form_label">
+                    <input type="radio" id="husos_igen" name="husos" value="igen">
+                    Igen
+                </label>
+                <label class="form_label">
+                    <input type="radio" id="husos_nem" name="husos" value="nem">
+                    Nem
+                </label>
+            </div>
+
+            <!--BEKÜLDÉS DÁTUM-->
+            <label class="form_label">
+                Beküldés dátuma:
+                <input type="date" id="bekuldes_datum" name="bekuldes_datum">
+            </label><br>
+
+            <!--BEKÜLDÉS GOMB-->
+            <button type="submit">Beküldés</button>
+        </form>
+
+    </div>
+
+    <footer class="container">
+        <div>©2024 Czapek Zoltán</div>
+        <div>Az oldal tanulmányi célú.</div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

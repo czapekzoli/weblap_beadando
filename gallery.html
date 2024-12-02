@@ -4,6 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Czapek Zoltán">
+    <meta name="description" content="Gallery, egy-egy képalbum, a főételekhez, desszertekhez és italokhoz">
     <title>Receptek</title>
     <link rel="icon" type="image/x-icon" href="favicon_io/android-chrome-512x512.png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kalam">
@@ -23,7 +25,7 @@
             <ul class="nav_container">
                 <li><a href="index.html">Ételek</a></li>
                 <li><a href="italok.html">Italok</a></li>
-                <li><a href="#">Űrlap</a></li>
+                <li><a href="form.html">Űrlap</a></li>
                 <li><a class="active" href="#">Kép album</a></li>
             </ul>
         </nav>
@@ -59,43 +61,8 @@
         <div>©2024 Czapek Zoltán</div>
         <div>Az oldal tanulmányi célú.</div>
     </footer>
-    <script src="jQuery/slick-1.8.1/slick/slick.js">
-    </script>
-    <script>
-        $(document).ready(function () {
-
-            $(".center").slick({
-                adaptiveHeight: true,
-                dots: false,
-                infinite: true,
-                centerMode: true,
-                centerPadding: '60px',
-                slidesToShow: 3,
-                slidesToScroll: 1,
-                autoplay: false,
-                responsive: [
-                    {
-                        breakpoint: 768,
-                        settings: {
-                            arrows: false,
-                            dots: true,
-                            centerPadding: '60px',
-                            slidesToShow: 3
-                        }
-                    },
-                    {
-                        breakpoint: 600,
-                        settings: {
-                            arrows: false,
-                            centerPadding: '60px',
-                            slidesToShow: 1
-                        }
-                    }
-                ]
-            });
-
-        });
-    </script>
+    <script src="jQuery/slick-1.8.1/slick/slick.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

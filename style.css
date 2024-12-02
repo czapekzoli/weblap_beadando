@@ -31,24 +31,30 @@ body {
   margin: 1%;
 }
 
-aside{
+aside {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #b2895074;
   padding: 0px 0px;
   color: #000000;
-  text-align: justify;
   border-radius: 15px;
   flex: 1 1 100%;
   position: relative;
   text-align: center;
   font-size: 1.5em;
 }
-aside h1,h6 {
-  margin:0;
+
+aside h1,
+h6 {
+  margin: 0;
   padding: 0;
 }
-br{
+
+br {
   height: 0;
 }
+
 /******TAGEK******/
 
 h1 {
@@ -177,16 +183,6 @@ footer.container {
 
 /*====OSZTALYOK====*/
 
-/*img.gyumolcskep {
-  width: 10vw;
-  height: auto;
-  float: right;
-  margin-top: 8px;
-  margin-left: 5px;
-  margin-bottom: 5px;
-  display: block;
-}*/
-
 img.szoveg_elotte {
   display: block;
   width: auto;
@@ -209,6 +205,7 @@ h2.recept {
 }
 
 .kep_mogotte {
+  
   position: absolute;
   color: white;
   padding: 5px 10px;
@@ -218,6 +215,9 @@ h2.recept {
 p.kep_mogott {
   position: absolute;
   padding-top: 15vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 h4 {
@@ -244,13 +244,15 @@ ol.ingredients {
   text-align: left;
 }
 
-aside.alkohol,.mentes{
+aside.alkohol,
+.mentes {
   flex-basis: 98%;
 }
 
 /******CHECKBOX******/
 
 .rounded-checkbox {
+  background-color: transparent;
   width: 15px;
   height: 15px;
   border-radius: 50%;
@@ -265,6 +267,8 @@ aside.alkohol,.mentes{
 }
 
 .rounded-checkbox:checked {
+  width: 25px;
+  height: 25px;
   accent-color: black;
   appearance: auto;
   clip-path: circle(50% at 50% 50%);
@@ -301,7 +305,7 @@ aside.alkohol,.mentes{
   max-height: 80vh;
 }
 
-.felugro .elkeszites h2{
+.felugro .elkeszites h2 {
   color: white;
 }
 
@@ -336,15 +340,20 @@ span.adag {
   font-size: 30px;
   color: rgb(117, 0, 0);
   font-weight: bold;
+  text-shadow: white 1px 0 10px;
 }
 
-button.pluszbutton {
-  flex-basis: 98%;
+button.pluszbutton, button.minuszbutton {
+  background-color: #e9c46a;
+  border:none;
+  font-size:xx-large;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 
-button.minuszbutton {
-  flex-basis: 98%;
-}
+
 
 /*====GALLERY====*/
 
@@ -384,58 +393,138 @@ section {
 .slick-current {
   opacity: 1;
 }
-.order_hatra{
-  order:100;
+
+.order_hatra {
+  order: 100;
 }
-.mentes{
-  order:99;
+
+.mentes {
+  order: 99;
 }
+
+/*====FORM====*/
+
+.form_container {
+  background-color: #e9c46a;
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 15px;
+  font-size: 1em;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  flex-basis: 98%;
+}
+
+label.form_label {
+  display: block;
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: #333;
+}
+
+span#formazas_as_label {
+  font-weight: bold;
+  color: #333;
+}
+
+input, select {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 0.9em;
+  background-color: #fff;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline-block;
+  width: auto;
+  margin-right: 10px;
+}
+
+.radio_group {
+  margin: 10px 0;
+}
+
+button[type="submit"] {
+  display: block;
+  width: 100%;
+  background-color: #b28950;
+  color: white;
+  font-size: 1em;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #a77c48;
+}
+
+
 /******TABLET******/
 
 @media all and (min-width: 600px) {
-  aside{
+  aside {
     flex-basis: 98%;
   }
 
-  aside.alkohol,.mentes{
+  aside.alkohol,
+  .mentes {
     flex-basis: 98%;
   }
+
   nav {
     flex-basis: 98%;
   }
-  .order_hatra{
-    order:100
+
+  .order_hatra {
+    order: 100
   }
-  .mentes{
-    order:99
+
+  .mentes {
+    order: 99
   }
-  
-  .recept, article {
+
+  .recept,
+  article {
     flex-basis: 48%;
   }
 
   img.szoveg_elotte {
     height: 20vw;
   }
-
+  .form_container {
+    flex-basis: 98%;
+  }
 }
+
+
 /******SZÁMÍTÓGÉP******/
 
 @media all and (min-width: 768px) {
-  aside{
+  aside {
     flex-basis: 98%;
   }
-  aside.alkohol,.mentes{
+
+  aside.alkohol,
+  .mentes {
     flex-basis: 48%;
   }
-  .order_hatra{
-    order:0
-  }
-  .mentes{
-    order:0
+
+  .order_hatra {
+    order: 0
   }
 
-  .recept,article {
+  .mentes {
+    order: 0
+  }
+
+  .recept,
+  article {
     flex-basis: 23%;
 
   }
@@ -451,5 +540,9 @@ section {
   p.kep_mogott {
     position: absolute;
     padding-top: 7vw;
+  }
+
+  .form_container {
+    flex-basis: 50%;
   }
 }
