@@ -124,44 +124,45 @@ header.container {
 
 /******NAV******/
 
-nav {
-  padding: 8px;
-  flex: 1 1 100%;
-}
-
 nav ul {
-  font-weight: bold;
-  list-style-type: none;
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 
-nav li a {
-  display: block;
-  padding: 8px;
-  margin-bottom: 0px;
-  color: #000000;
-  background-color: #a9a18e;
-  /*border-radius: 15px;*/
-  text-align: center;
-  text-decoration: none;
-  border-radius: 10px;
+.navigation {
+  border-radius: 15px;
+  background-color: #4a4a4a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em 1em;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .nav_container {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 1em;
 }
 
-nav ul li a.active {
-  background-color: #C8D5B9;
+
+.nav_container li a {
+  text-decoration: none;
+  color: #fff;
+  font-family: 'Kalam', cursive;
+  font-size: 1.2em;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-nav li a:hover {
-  background-color: #ffc8dd;
-  transform: scale(1.2);
+.nav_container li a:hover,
+.nav_container li a.active {
+  background-color: #88683b;
+  /* Highlight color */
+  color: #fff;
 }
 
 /*====FOOTER====*/
@@ -205,7 +206,7 @@ h2.recept {
 }
 
 .kep_mogotte {
-  
+
   position: absolute;
   color: white;
   padding: 5px 10px;
@@ -343,10 +344,11 @@ span.adag {
   text-shadow: white 1px 0 10px;
 }
 
-button.pluszbutton, button.minuszbutton {
+button.pluszbutton,
+button.minuszbutton {
   background-color: transparent;
-  border:none;
-  font-size:xx-large;
+  border: none;
+  font-size: xx-large;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -414,7 +416,8 @@ section {
   flex-basis: 98%;
 }
 
-label.form_label,p.form_label {
+label.form_label,
+p.form_label {
   display: block;
   margin-bottom: 15px;
   font-weight: bold;
@@ -422,7 +425,7 @@ label.form_label,p.form_label {
   padding: 0;
 }
 
-label.mentesek_indent{
+label.mentesek_indent {
   padding-left: 20px;
 }
 
@@ -453,14 +456,16 @@ select {
   background-color: #fff;
 }
 
-input#husos_igen, input#husos_nem {
+input#husos_igen,
+input#husos_nem {
   display: inline-block;
   width: auto;
   margin-right: 10px;
 }
 
 input#glutenmentes,
-input#laktozmentes,input#tojasmentes {
+input#laktozmentes,
+input#tojasmentes {
   display: inline-block;
   width: auto;
   margin-right: 10px;
@@ -519,6 +524,7 @@ button[type="submit"]:hover {
   img.szoveg_elotte {
     height: 20vw;
   }
+
   .form_container {
     flex-basis: 98%;
   }
