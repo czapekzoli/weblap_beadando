@@ -414,11 +414,16 @@ section {
   flex-basis: 98%;
 }
 
-label.form_label {
+label.form_label,p.form_label {
   display: block;
   margin-bottom: 15px;
   font-weight: bold;
   color: #333;
+  padding: 0;
+}
+
+label.mentesek_indent{
+  padding-left: 20px;
 }
 
 span#formazas_as_label {
@@ -448,12 +453,18 @@ select {
   background-color: #fff;
 }
 
-/*input[type="checkbox"],
-input[type="radio"] {
+input#husos_igen, input#husos_nem {
   display: inline-block;
   width: auto;
   margin-right: 10px;
-}*/
+}
+
+input#glutenmentes,
+input#laktozmentes,input#tojasmentes {
+  display: inline-block;
+  width: auto;
+  margin-right: 10px;
+}
 
 .radio_group {
   margin: 10px 0;

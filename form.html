@@ -60,19 +60,28 @@
             </label><br>
 
             <!--GLUTÉNMENTES-E CHECKBOX-->
-            <label class="form_label">
+            <p class="form_label mentesek">Allergén mentesség:</p>
+            <label class="form_label mentesek_indent">
                 Gluténmentes:
-                <input class="gallery" type="checkbox" id="glutenmentes" name="glutenmentes">
-            </label><br>
+                <input class="gallery" type="checkbox" id="glutenmentes" name="glutenmentes" value="ON">
+            </label>
+            <label class="form_label mentesek_indent">
+                Laktózmentes:
+                <input class="gallery" type="checkbox" id="laktozmentes" name="laktozmentes" value="ON">
+            </label>
+            <label class="form_label mentesek_indent">
+                Tojásmentes:
+                <input class="gallery" type="checkbox" id="tojasmentes" name="tojasmentes" value="ON" >
+            </label>
 
             <!--HÚSOS-E RADIO-->
             <span id="formazas_as_label">Húsos étel?</span><br>
             <div class="radio_group">
-                <label class="form_label">
+                <label class="form_label mentesek_indent">
                     <input class="gallery" type="radio" id="husos_igen" name="husos" value="igen">
                     Igen
                 </label>
-                <label class="form_label">
+                <label class="form_label mentesek_indent">
                     <input class="gallery" type="radio" id="husos_nem" name="husos" value="nem">
                     Nem
                 </label>
