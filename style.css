@@ -486,6 +486,14 @@ button[type="submit"]:hover {
   background-color: #a77c48;
 }
 
+/*====VALIDÁLÁS====*/
+label.error {
+  color: red;
+}
+input.error{
+  background-color: #ff00003a;
+}
+
 
 /******TABLET******/
 

@@ -86,3 +86,39 @@ $(document).ready(function () {
     });
 
 });
+
+$(document).ready(function () {
+    $("#recept_form").validate({
+        rules: {
+            husos: "required",
+            recept_nev: {
+                required: true,
+            },
+            adag: {
+                required: true,
+                min: 1,
+                max: 20,
+                digits: true
+            },
+            email: {
+                required: true,
+                email: true
+            },
+            bekuldes_datum: {
+                required: true,
+            }
+        },
+        messages: {
+            recept_nev: {required: " Írd be az étel nevét!",
+            },
+            adag: {
+                required: " Add meg a mennyiséget!",
+                min: " A minimum adag mennyiség: 1",
+                max: " A maximum adag mennyiség: 20"
+            },
+            email: " Add meg a VALÓS email címedet!",
+            husos: " Kérlek válassz!",
+            bekuldes_datum: " Add meg a beküldés dátumát!"
+        },
+    });
+});
