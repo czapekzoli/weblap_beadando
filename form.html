@@ -8,6 +8,9 @@
     <meta name="description" content="Form, új receptek beküldéséhez űrlap">
     <link rel="stylesheet" href="style.css">
     <title>Receptek</title>
+    <script src="jQuery/jquery-3.7.1.js"></script>
+    <script src="jQuery/jquery-validation-1/dist/jquery.validate.js">
+    </script>
     <link rel="icon" type="image/x-icon" href="favicon_io/android-chrome-512x512.png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kalam">
 </head>
@@ -15,7 +18,6 @@
 <body>
     <header class="container">
         <h1>RECEPT BEKÜLDÉSE</h1>
-        <!--<img src="logo.png" alt="logo" id="logo" width="350">-->
     </header>
 
     <div class="container">
@@ -71,19 +73,19 @@
             </label>
             <label class="form_label mentesek_indent">
                 Tojásmentes:
-                <input class="gallery" type="checkbox" id="tojasmentes" name="tojasmentes" value="ON" >
+                <input class="gallery" type="checkbox" id="tojasmentes" name="tojasmentes" value="ON">
             </label>
 
             <!--HÚSOS-E RADIO-->
             <span id="formazas_as_label">Húsos étel?</span><br>
             <div class="radio_group">
                 <label class="form_label mentesek_indent">
-                    <input class="gallery" type="radio" id="husos_igen" name="husos" value="igen">
                     Igen
+                    <input class="gallery" type="radio" id="husos_igen" name="husos" value="igen">
                 </label>
                 <label class="form_label mentesek_indent">
-                    <input class="gallery" type="radio" id="husos_nem" name="husos" value="nem">
                     Nem
+                    <input class="gallery" type="radio" id="husos_nem" name="husos" value="nem">
                 </label>
             </div>
 
@@ -104,6 +106,40 @@
         <div>Az oldal tanulmányi célú.</div>
     </footer>
     <script src="script.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#recept_form").validate({
+                rules: {
+                    recept_nev: "required",
+                    husos:"required",
+                    adag:{
+                        required:true,
+                        min:1,
+                        max:20
+                    },
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                },
+                messages: {
+                    recept_nev: " Írd be az étel nevét!",
+                    adag:{
+                        required: " Add meg a mennyiséget!",
+                        min:" A minimum adag mennyiség: 1",
+                        max:" A maximum adag mennyiség: 20"
+                    },
+                    email: " Add meg a VALÓS email címedet!",
+                    husos:"Kérlek válassz!"
+                },
+            });
+        });
+    </script>
+    <style>
+        label.error {
+            color: red;
+        }
+    </style>
 </body>
 
 </html>
