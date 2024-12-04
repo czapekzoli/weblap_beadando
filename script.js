@@ -21,6 +21,54 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+document.addEventListener("DOMContentLoaded", function () {
+    const ids = ["felugro_recept1_anchor","felugro_recept2_anchor","felugro_recept3_anchor","felugro_recept4_anchor","felugro_recept5_anchor","felugro_recept6_anchor","felugro_recept7_anchor","felugro_recept8_anchor",];
+    ids.forEach(id => {
+        const elem = document.getElementById(id);
+        if (elem) {
+            elem.addEventListener("click", function () {
+                felugrik(id.replace("_anchor", ""));
+            });
+        }
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const ids = ["felugro_recept1_italanchor","felugro_recept2_italanchor","felugro_recept3_italanchor","felugro_recept4_italanchor"];
+    ids.forEach(id => {
+        const elem = document.getElementById(id);
+        if (elem) {
+            elem.addEventListener("click", function () {
+                felugrik(id.replace("_italanchor", ""));
+            });
+        }
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const ids = ["felugro_recept1_fedesanchor","felugro_recept2_fedesanchor","felugro_recept3_fedesanchor","felugro_recept4_fedesanchor","felugro_recept5_fedesanchor","felugro_recept6_fedesanchor","felugro_recept7_fedesanchor","felugro_recept8_fedesanchor"];
+    ids.forEach(id => {
+        const elem = document.getElementById(id);
+        if (elem) {
+            elem.addEventListener("click", function () {
+                felugrik(id.replace("_fedesanchor", ""));
+            });
+        }
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const ids = ["felugro_recept1_xanchor","felugro_recept2_xanchor","felugro_recept3_xanchor","felugro_recept4_xanchor","felugro_recept5_xanchor","felugro_recept6_xanchor","felugro_recept7_xanchor","felugro_recept8_xanchor"];
+    ids.forEach(id => {
+        const elem = document.getElementById(id);
+        if (elem) {
+            elem.addEventListener("click", function () {
+                felugrik(id.replace("_xanchor", ""));
+            });
+        }
+    });
+});
+
 
 function pluszadagolas(receptid) {
     let felsorolas = document.getElementById(receptid).getElementsByTagName("li")
@@ -114,7 +162,8 @@ $(document).ready(function () {
             adag: {
                 required: " Add meg a mennyiséget!",
                 min: " A minimum adag mennyiség: 1",
-                max: " A maximum adag mennyiség: 20"
+                max: " A maximum adag mennyiség: 20",
+                digits: " Kérlek csak számot írj be!"
             },
             email: " Add meg a VALÓS email címedet!",
             husos: " Kérlek válassz!",

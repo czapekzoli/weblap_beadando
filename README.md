@@ -25,3 +25,4 @@ képek: https://www.pexels.com/hu-hu/
 képek: https://unsplash.com
 felugró-ablak inspiráció: https://www.youtube.com/watch?v=iE_6pQ3RlZU&list=PL7qjVvbVes5JdxC5iKLgiickdA5NJTAsy
 lekerekített checkbox inspiráció: https://stackoverflow.com/questions/29617200/how-to-make-checkboxes-rounded
+DOMContentLoaded event listener (DOM problémák miatt) inspiráció: chatgpt

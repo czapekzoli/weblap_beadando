@@ -87,7 +87,7 @@
           </label>
         </ul>
       </div>
-      <a href="#" onclick="felugrik('felugro_recept1')">Elkészítés...</a>
+      <a href="#" id="felugro_recept1_anchor">Elkészítés...</a>
     </article>
     <!--2. RECEPT-->
     <article class="recept">
@@ -124,7 +124,7 @@
           </label>
         </ul>
       </div>
-      <a href="#" onclick="felugrik('felugro_recept2')">Elkészítés...</a>
+      <a href="#" id="felugro_recept2_anchor">Elkészítés...</a>
     </article>
     <!--3. RECEPT-->
     <article class="recept">
@@ -167,7 +167,7 @@
           </label>
         </ul>
       </div>
-      <a href="#" onclick="felugrik('felugro_recept3')">Elkészítés...</a>
+      <a href="#" id="felugro_recept3_anchor">Elkészítés...</a>
     </article>
     <!--4. RECEPT-->
     <article class="recept">
@@ -219,7 +219,7 @@
           </label>
         </ul>
       </div>
-      <a href="#" onclick="felugrik('felugro_recept4')">Elkészítés...</a>
+      <a href="#" id="felugro_recept4_anchor">Elkészítés...</a>
     </article>
     <aside>
       <h1>DESSZERTEK</h1>
@@ -256,7 +256,7 @@
           </label>
         </ul>
       </div>
-      <a href="#" onclick="felugrik('felugro_recept5')">Elkészítés...</a>
+      <a href="#" id="felugro_recept5_anchor">Elkészítés...</a>
     </article>
     <!--6. RECEPT-->
     <article class="recept">
@@ -286,7 +286,7 @@
           </label>
         </ul>
       </div>
-      <a href="#" onclick="felugrik('felugro_recept6')">Elkészítés...</a>
+      <a href="#" id="felugro_recept6_anchor">Elkészítés...</a>
     </article>
     <!--7. RECEPT-->
     <article class="recept">
@@ -318,7 +318,7 @@
           </label>
         </ul>
       </div>
-      <a href="#" onclick="felugrik('felugro_recept7')">Elkészítés...</a>
+      <a href="#" id="felugro_recept7_anchor">Elkészítés...</a>
     </article>
     <!--8. RECEPT-->
     <article class="recept">
@@ -360,14 +360,14 @@
           </label>
         </ul>
       </div>
-      <a href="#" onclick="felugrik('felugro_recept8')">Elkészítés...</a>
+      <a href="#" id="felugro_recept8_anchor">Elkészítés...</a>
     </article>
   </div>
   <!--1. RECEPT POP-UP-->
   <div class="felugro" id="felugro_recept1">
-    <div class="fedes" onclick="felugrik('felugro_recept1')"></div>
+    <div class="fedes" id="felugro_recept1_fedesanchor"></div>
     <div class="elkeszites">
-      <div class="bezaras" onclick="felugrik('felugro_recept1')">&times;</div>
+      <div class="bezaras" id="felugro_recept1_xanchor">&times;</div>
       <div class="ingredients">
         <h2 class="recept">CSIRKEPÖRKÖLT</h2>
         <ol class="ingredients">
@@ -386,9 +386,9 @@
   </div>
   <!--2. RECEPT POP-UP-->
   <div class="felugro" id="felugro_recept2">
-    <div class="fedes" onclick="felugrik('felugro_recept2')"></div>
+    <div class="fedes" id="felugro_recept2_fedesanchor"></div>
     <div class="elkeszites">
-      <div class="bezaras" onclick="felugrik('felugro_recept2')">&times;</div>
+      <div class="bezaras" id="felugro_recept2_xanchor">&times;</div>
       <div class="ingredients">
         <h2 class="recept">ROZMARINGOS LIBACOMB</h2>
         <ol class="ingredients">
@@ -404,9 +404,9 @@
   </div>
   <!--3. RECEPT POP-UP-->
   <div class="felugro" id="felugro_recept3">
-    <div class="fedes" onclick="felugrik('felugro_recept3')"></div>
+    <div class="fedes" id="felugro_recept3_fedesanchor"></div>
     <div class="elkeszites">
-      <div class="bezaras" onclick="felugrik('felugro_recept3')">&times;</div>
+      <div class="bezaras" id="felugro_recept3_xanchor">&times;</div>
       <div class="ingredients">
         <h2 class="recept">PECSENYE</h2>
         <ol class="ingredients">
@@ -432,9 +432,9 @@
   </div>
   <!--4. RECEPT POP-UP-->
   <div class="felugro" id="felugro_recept4">
-    <div class="fedes" onclick="felugrik('felugro_recept4')"></div>
+    <div class="fedes" id="felugro_recept4_fedesanchor"></div>
     <div class="elkeszites">
-      <div class="bezaras" onclick="felugrik('felugro_recept4')">&times;</div>
+      <div class="bezaras" id="felugro_recept4_xanchor">&times;</div>
       <div class="ingredients">
         <h2 class="recept">GOMBÁS RIZOTTÓ</h2>
         <ol class="ingredients">
@@ -458,9 +458,9 @@
   </div>
   <!--5. RECEPT POP-UP-->
   <div class="felugro" id="felugro_recept5">
-    <div class="fedes" onclick="felugrik('felugro_recept5')"></div>
+    <div class="fedes" id="felugro_recept5_fedesanchor"></div>
     <div class="elkeszites">
-      <div class="bezaras" onclick="felugrik('felugro_recept5')">&times;</div>
+      <div class="bezaras" id="felugro_recept5_xanchor">&times;</div>
       <div class="ingredients">
         <h2 class="recept">CSOKIS TIRAMISU</h2>
         <ol class="ingredients">
@@ -482,9 +482,9 @@
   </div>
   <!--6. RECEPT POP-UP-->
   <div class="felugro" id="felugro_recept6">
-    <div class="fedes" onclick="felugrik('felugro_recept6')"></div>
+    <div class="fedes" id="felugro_recept6_fedesanchor"></div>
     <div class="elkeszites">
-      <div class="bezaras" onclick="felugrik('felugro_recept6')">&times;</div>
+      <div class="bezaras" id="felugro_recept6_xanchor">&times;</div>
       <div class="ingredients">
         <h2 class="recept">MÁLNATURMIX</h2>
         <ol class="ingredients">
@@ -498,9 +498,9 @@
   </div>
   <!--7. RECEPT POP-UP-->
   <div class="felugro" id="felugro_recept7">
-    <div class="fedes" onclick="felugrik('felugro_recept7')"></div>
+    <div class="fedes" id="felugro_recept7_fedesanchor"></div>
     <div class="elkeszites">
-      <div class="bezaras" onclick="felugrik('felugro_recept7')">&times;</div>
+      <div class="bezaras" id="felugro_recept7_xanchor">&times;</div>
       <div class="ingredients">
         <h2 class="recept">MEGGYLEVES</h2>
         <ol class="ingredients">
@@ -514,9 +514,9 @@
   </div>
   <!--8. RECEPT POP-UP-->
   <div class="felugro" id="felugro_recept8">
-    <div class="fedes" onclick="felugrik('felugro_recept8')"></div>
+    <div class="fedes" id="felugro_recept8_fedesanchor"></div>
     <div class="elkeszites">
-      <div class="bezaras" onclick="felugrik('felugro_recept8')">&times;</div>
+      <div class="bezaras" id="felugro_recept8_xanchor">&times;</div>
       <div class="ingredients">
         <h2 class="recept">LISZTMENTES CSOKITORTA</h2>
         <ol class="ingredients">
