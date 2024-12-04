@@ -71,29 +71,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 function pluszadagolas(receptid) {
-    let felsorolas = document.getElementById(receptid).getElementsByTagName("li")
-    console.log(felsorolas)
-    let hossza = felsorolas.length
+    let felsorolas = document.getElementById(receptid).getElementsByTagName("li");
+    console.log(felsorolas);
+    let hossza = felsorolas.length;
     for (i = 0; i < hossza; i++) {
-        szokoz_index = felsorolas[i].innerText.indexOf(" ")
-        mennyiseg = felsorolas[i].innerText.substring(0, szokoz_index)
-        console.log(felsorolas[i].textContent)
-        felsorolas[i].innerHTML = `<input type="checkbox" class="rounded-checkbox">${Number(mennyiseg) + Number(mennyiseg * (1 / Number((document.getElementById(`${receptid}_adag`).innerText))))} ${felsorolas[i].innerText.substring(szokoz_index)}`
+        szokoz_index = felsorolas[i].innerText.indexOf(" ");
+        mennyiseg = felsorolas[i].innerText.substring(0, szokoz_index);
+        console.log(felsorolas[i].textContent);
+        felsorolas[i].innerHTML = `<input type="checkbox" class="rounded-checkbox">${Number(mennyiseg) + Number(mennyiseg * (1 / Number((document.getElementById(`${receptid}_adag`).innerText))))} ${felsorolas[i].innerText.substring(szokoz_index)}`;
     }
-    document.getElementById(`${receptid}_adag`).innerText = Number(document.getElementById(`${receptid}_adag`).innerText) + 1
+    document.getElementById(`${receptid}_adag`).innerText = Number(document.getElementById(`${receptid}_adag`).innerText) + 1;
 }
 
 function minuszadagolas(receptid) {
     if ((Number(document.getElementById(`${receptid}_adag`).innerText) - 1) >= 1) {
-        let felsorolas = document.getElementById(receptid).getElementsByTagName("li")
-        let hossza = felsorolas.length
+        let felsorolas = document.getElementById(receptid).getElementsByTagName("li");
+        let hossza = felsorolas.length;
         for (i = 0; i < hossza; i++) {
-            szokoz_index = felsorolas[i].innerText.indexOf(" ")
-            mennyiseg = felsorolas[i].innerText.substring(0, szokoz_index)
-            console.log(felsorolas[i].textContent)
-            felsorolas[i].innerHTML = `<input type="checkbox" class="rounded-checkbox">${Number(mennyiseg) - Number(mennyiseg * (1 / Number((document.getElementById(`${receptid}_adag`).innerText))))} ${felsorolas[i].innerText.substring(szokoz_index)}`
+            szokoz_index = felsorolas[i].innerText.indexOf(" ");
+            mennyiseg = felsorolas[i].innerText.substring(0, szokoz_index);
+            console.log(felsorolas[i].textContent);
+            felsorolas[i].innerHTML = `<input type="checkbox" class="rounded-checkbox">${Number(mennyiseg) - Number(mennyiseg * (1 / Number((document.getElementById(`${receptid}_adag`).innerText))))} ${felsorolas[i].innerText.substring(szokoz_index)}`;
         }
-        document.getElementById(`${receptid}_adag`).innerText = Number(document.getElementById(`${receptid}_adag`).innerText) - 1
+        document.getElementById(`${receptid}_adag`).innerText = Number(document.getElementById(`${receptid}_adag`).innerText) - 1;
     }
 }
 
